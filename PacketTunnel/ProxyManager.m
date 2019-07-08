@@ -1,5 +1,6 @@
 //
 //  ProxyManager.m
+//  ShadowCoel
 //
 //  Created by LEI on 2/23/16.
 //  Copyright © 2016 TouchingApp. All rights reserved.
@@ -7,16 +8,9 @@
 
 #import "ProxyManager.h"
 #import <ShadowPath/ShadowPath.h>
+#import <ssLocal/ssLocal.h>
 #import <netinet/in.h>
 #import "ShadowCoelBase.h"
-#import "Profile.h"
-#if USING_SSR_NATIVE
-#include <ssrNative/ssrNative.h>
-#import <CocoaLumberjack/CocoaLumberjack.h>
-static DDLogLevel ddLogLevel = DDLogLevelWarning;
-#else
-#include <ssrLocal/ssrLocal.h>
-#endif
 
 @interface ProxyManager () {
     int _shadowsocksProxyPort;
@@ -53,81 +47,6 @@ int sock_port (int fd) {
     }else{
         return ntohs(sin.sin_port);
     }
-}
-
-struct server_config * build_config_object(Profile *profile, unsigned short listenPort) {
-    const char *protocol = profile.protocol.UTF8String;
-    if (protocol && strcmp(protocol, "verify_sha1") == 0) {
-        // LOGI("The verify_sha1 protocol is deprecate! Fallback to origin protocol.");
-        protocol = NULL;
-    }
-    
-    struct server_config *config = config_create();
-    
-    config->udp = true;
-    config->listen_port = listenPort;
-    string_safe_assign(&config->method, profile.method.UTF8String);
-    string_safe_assign(&config->remote_host, profile.server.UTF8String);
-    config->remote_port = (unsigned short) profile.serverPort;
-    string_safe_assign(&config->password, profile.password.UTF8String);
-    string_safe_assign(&config->protocol, protocol);
-    string_safe_assign(&config->protocol_param, profile.protocolParam.UTF8String);
-    string_safe_assign(&config->obfs, profile.obfs.UTF8String);
-    string_safe_assign(&config->obfs_param, profile.obfsParam.UTF8String);
-    
-    return config;
-}
-
-#if USING_SSR_NATIVE
-struct ssr_client_state *g_state = NULL;
-void feedback_state(struct ssr_client_state *state, void *p) {
-    g_state = state;
-    shadowsocks_handler(ssr_get_listen_socket_fd(state), p);
-}
-
-void info_callback(const char *info, void *p) {
-    DDLogWarn(@"%s", info);
-}
-
-#else
-struct ssr_local_state *g_state = NULL;
-void feedback_state(struct ssr_local_state *state, void *p) {
-    g_state = state;
-    shadowsocks_handler(ssr_Local_listen_socket_fd(state), p);
-}
-#endif
-
-void ssr_main_loop(Profile *profile, unsigned short listenPort, const char *appPath, void *context) {
-    struct server_config *config = NULL;
-    do {
-        config = build_config_object(profile, listenPort);
-        if (config == NULL) {
-            break;
-        }
-        
-        if (config->method == NULL || config->password==NULL || config->remote_host==NULL) {
-            break;
-        }
-        
-#if USING_SSR_NATIVE
-        set_app_name(appPath);
-        [DDLog addLogger:[DDASLLogger sharedInstance]]; // ASL = Apple System Logs
-        set_dump_info_callback(&info_callback, context);
-        ssr_run_loop_begin(config, &feedback_state, context);
-#else
-        ssr_local_main_loop(config, &feedback_state, context);
-#endif
-        g_state = NULL;
-    } while(0);
-    
-    config_release(config);
-}
-
-void ssr_stop(void) {
-#if USING_SSR_NATIVE
-    ssr_run_loop_shutdown(g_state);
-#else
-#endif
 }
 
 @implementation ProxyManager
@@ -167,7 +86,7 @@ void ssr_stop(void) {
     }
 }
 
-# pragma mark - Shadowsocks 
+# pragma mark - Shadowsocks
 
 - (void)startShadowsocks: (ShadowsocksProxyCompletion)completion {
     _shadowsocksCompletion = [completion copy];
@@ -177,12 +96,26 @@ void ssr_stop(void) {
 - (void)_startShadowsocks {
     NSString *confContent = [NSString stringWithContentsOfURL:[ShadowCoel sharedProxyConfUrl] encoding:NSUTF8StringEncoding error:nil];
     NSDictionary *json = [confContent jsonDictionary];
-    Profile *profile = [[Profile alloc] initWithJSONDictionary:json];
-    profile.listenPort = 0;
-    
-    if (profile.server.length && profile.serverPort && profile.password.length) {
-        NSString *path = [NSBundle mainBundle].executablePath;
-        ssr_main_loop(profile, profile.listenPort, path.UTF8String, (__bridge void *)(self));
+    NSString *host = json[@"host"];
+    NSNumber *port = json[@"port"];
+    NSString *password = json[@"password"];
+    NSString *authscheme = json[@"authscheme"];
+    NSString *protocol = json[@"protocol"];
+    NSString *protocol_param = json[@"protocol_param"];
+    NSString *obfs = json[@"obfs"];
+    NSString *obfs_param = json[@"obfs_param"];
+    BOOL ota = [json[@"ota"] boolValue];
+    if (host && port && password && authscheme) {
+        profile_t profile;
+        memset(&profile, 0, sizeof(profile_t));
+        profile.remote_host = strdup([host UTF8String]);
+        profile.remote_port = [port intValue];
+        profile.password = strdup([password UTF8String]);
+        profile.method = strdup([authscheme UTF8String]);
+        profile.local_addr = "127.0.0.1";
+        profile.local_port = 0;
+        profile.timeout = 600;
+        start_ss_local_server_with_callback(profile, shadowsocks_handler, (__bridge void *)self);
     }else {
         if (_shadowsocksCompletion) {
             _shadowsocksCompletion(0, nil);
@@ -192,7 +125,7 @@ void ssr_stop(void) {
 }
 
 - (void)stopShadowsocks {
-    ssr_stop();
+    // Do nothing
 }
 
 - (void)onShadowsocksCallback:(int)fd {

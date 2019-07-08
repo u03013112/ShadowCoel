@@ -55,6 +55,10 @@ class CollectionViewController: SegmentPageVC {
             navigationController?.pushViewController(vc, animated: true)
         case 1:
             let alert = UIAlertController(title: "Add Proxy".localized(), message: nil, preferredStyle: .actionSheet)
+            alert.addAction(UIAlertAction(title: "Import From Subscribe".localized(), style: .default, handler: { (action) in
+                let vc = SubscriptionConfigurationViewController()
+                self.navigationController?.pushViewController(vc, animated: true)
+            }))
             alert.addAction(UIAlertAction(title: "Import From QRCode".localized(), style: .default, handler: { (action) in
                 let importer = Importer(vc: self)
                 importer.importConfigFromQRCode()

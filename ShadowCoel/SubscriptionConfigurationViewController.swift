@@ -8,16 +8,19 @@
 
 import Foundation
 import Eureka
+import Async
 
 public enum SubscriptionError: Error {
     case Error(String)
 }
 
 private let kSubscribeFormName = "name"
+private let kSubscribeFormUpdate = "update"
 private let kSubscribeFormUrl = "url"
 
 class SubscriptionConfigurationViewController: FormViewController {
     
+    var sbMgr: SubscribeManager
     var upstreamSubscribe: Subscribe
     let isEdit: Bool
     
@@ -33,6 +36,7 @@ class SubscriptionConfigurationViewController: FormViewController {
             self.upstreamSubscribe = Subscribe()
             self.isEdit = false
         }
+        self.sbMgr = SubscribeManager()
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -43,9 +47,9 @@ class SubscriptionConfigurationViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if isEdit {
-            self.navigationItem.title = "Edit Subsciption".localized()
+            self.navigationItem.title = "Edit Subscription".localized()
         }else {
-            self.navigationItem.title = "Add Subsciption".localized()
+            self.navigationItem.title = "Add Subsription".localized()
         }
         generateForm()
     }
@@ -60,10 +64,64 @@ class SubscriptionConfigurationViewController: FormViewController {
             <<< TextRow(kSubscribeFormName) {
                 $0.title = "Name".localized()
                 $0.value = self.upstreamSubscribe.name
-        }
+                }.cellSetup { cell, row in
+                    cell.textField.autocorrectionType = .no
+                    cell.textField.autocapitalizationType = .none
+                }
+            <<< SwitchRow() {
+                $0.title = "Auto Update".localized()
+                $0.value = self.upstreamSubscribe.update
+            }
             <<< TextRow(kSubscribeFormUrl) {
                 $0.title = "URL".localized()
                 $0.value = self.upstreamSubscribe.url
+                }.cellSetup { cell, row in
+                    cell.textField.autocorrectionType = .no
+                    cell.textField.autocapitalizationType = .none
+                }
+        form +++ Section()
+            <<< ActionRow() {
+                $0.title = "Share QRCode".localized()
+                $0.hidden = Condition(booleanLiteral: !isEdit)
+                }.onCellSelection({ [unowned self] (cell, row) -> () in
+                    self.shareQRCode()
+                })
+            <<< ActionRow() {
+                $0.title = "Share Url".localized()
+                $0.hidden = Condition(booleanLiteral: !isEdit)
+                }.onCellSelection({ [unowned self] (cell, row) -> () in
+                    self.shareuri()
+                })
+        form +++ Section()
+            <<< ButtonRow() {
+                $0.title = "Delete".localized()
+                $0.hidden = Condition(booleanLiteral: !isEdit)
+                }.cellUpdate({ cell, row in
+                    cell.textLabel?.textColor = UIColor.red // 设置颜色为红色
+                }).onCellSelection({ [unowned self] (cell, row) -> () in
+                    self.deletesubscribe()
+                })
+    }
+    
+    func shareQRCode() {
+        let vc = QRCodeViewController(url: self.upstreamSubscribe.Uri())
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func shareuri() {
+        UIPasteboard.general.string = self.upstreamSubscribe.Uri()
+        showTextHUD("Success".localized(), dismissAfterDelay: 1.0)
+    }
+    
+    func deletesubscribe() {
+        let subscribes = DBUtils.all(Subscribe.self, sorted: "createAt").map({ $0 })
+        for ep in subscribes {
+            if ep.name == self.upstreamSubscribe.name,
+                ep.url == self.upstreamSubscribe.url {
+                print ("Remove existing: " + self.upstreamSubscribe.name)
+                self.navigationController?.popViewController(animated: true)
+                try? DBUtils.softDelete(ep.uuid, type: Subscribe.self)
+            }
         }
     }
     
@@ -78,8 +136,13 @@ class SubscriptionConfigurationViewController: FormViewController {
             }
             upstreamSubscribe.name = name
             upstreamSubscribe.url = url
-            // try DButils.add(upstreamSubscribe)
-            close()
+            try DBUtils.add(upstreamSubscribe)
+            sbMgr.updateSubscribe(url: url)
+            let time = 1.0
+            showTextHUD("Success".localized(), dismissAfterDelay: time)
+            Async.main(after: time) {
+                self.close()
+            }
             } catch {
             showTextHUD("\(error)", dismissAfterDelay: 1.0)
         }

@@ -34,6 +34,7 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Settings".localized()
+        self.tabBarController?.tabBar.barTintColor = Color.TabBackground
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -44,8 +45,9 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
     func generateForm() {
         form.delegate = nil
         form.removeAll()
-        form +++ generateTunnelSection()
+        // form +++ generateTunnelSection()
         form +++ generateAdvanceSection()
+        form +++ generateDebugSection()
         form +++ generateHelpSection()
         form.delegate = self
         tableView?.reloadData()
@@ -54,15 +56,23 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
     func generateAdvanceSection() -> Section {
         let section = Section("ADVANCE")
         section
+            /*
+
             <<< ActionRow() {
                 $0.title = "Siri".localized()
             }
+ */
+            /*
+ 
             <<< ActionRow() {
                 $0.title = "Sync".localized()
                 $0.value = SyncManager.shared.currentSyncServiceType.rawValue
                 }.onCellSelection({ [unowned self] (cell, row) -> () in
                     SyncManager.shared.showSyncVC(inVC: self)
-                })
+                }).cellUpdate {cell ,_ in
+                    cell.imageView?.image = UIImage(named: "Cloud")?.withRenderingMode(.alwaysTemplate)
+                    cell.imageView?.tintColor = Color.ButtonIcon
+            }
             <<< ActionRow() {
                 $0.title = self.isTouchIDOrFaceID().localized()
                 $0.hidden = Condition.function([kAuth]) { form in
@@ -70,13 +80,22 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
                         return support == "None"
                     }
                 }
-            }
+            }*/
             <<< ActionRow() {
                 $0.title = "Hide VPN Icon".localized()
-            }
+                }.cellUpdate {cell ,_ in
+                    cell.imageView?.image = UIImage(named: "HideIcon")?.withRenderingMode(.alwaysTemplate)
+                    cell.imageView?.tintColor = Color.ButtonIcon
+                }.onCellSelection({ [unowned self](cell, row) -> () in
+                    cell.setSelected(false, animated: true)
+                    self.showHideVPNIcon()
+                })
             <<< ActionRow() {
                 $0.title = "Reset".localized()
-            }
+                }.cellUpdate {cell ,_ in
+                    cell.imageView?.image = UIImage(named: "Reset")?.withRenderingMode(.alwaysTemplate)
+                    cell.imageView?.tintColor = Color.ButtonIcon
+        }
         return section
         }
     
@@ -84,11 +103,12 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
     func generateHelpSection() -> Section {
         let section = Section("HELP")
         section
+            /*
             <<< ActionRow {
                 $0.title = "User Manual".localized()
                 }.onCellSelection({ [unowned self] (cell, row) in
                     self.showUserManual()
-                })
+                })*/
             <<< ActionRow() {
                 $0.title = "About".localized()
                 }.cellSetup({ (cell, row) -> () in
@@ -97,7 +117,10 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
                 }).onCellSelection({ [unowned self](cell, row) -> () in
                     cell.setSelected(false, animated: true)
                     self.showAbout()
-                })
+                }).cellUpdate {cell ,_ in
+                    cell.imageView?.image = UIImage(named: "Info")?.withRenderingMode(.alwaysTemplate)
+                    cell.imageView?.tintColor = Color.ButtonIcon
+        }
         return section
     }
     
@@ -116,13 +139,37 @@ class SettingsViewController: FormViewController, MFMailComposeViewControllerDel
         return section
         }
     
+    func generateDebugSection() -> Section {
+        let section = Section("Debug")
+        section
+            <<< ActionRow() {
+                $0.title = "Debug".localized()
+                }.onCellSelection({ [unowned self](cell, row) -> () in
+                    cell.setSelected(false, animated: true)
+                    self.showDebug()
+                }).cellUpdate { cell, _ in
+                    cell.imageView?.image = UIImage(named: "Debug")?.withRenderingMode(.alwaysTemplate)
+                    cell.imageView?.tintColor = Color.ButtonIcon
+        }
+        return section
+    }
+    
     func showUserManual() {
         let url = "https://manual.potatso.com/"
         let vc = BaseSafariViewController(url: URL(string: url)!, entersReaderIfAvailable: false)
         vc.delegate = self
         present(vc, animated: true, completion: nil)
     }
-
+    
+    func showHideVPNIcon() {
+        let vc = HideVpnIconViewController()
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    func showDebug() {
+        let vc = DebugViewController()
+        navigationController?.pushViewController(vc,animated: true)
+    }
+    
     func showAbout() {
         let vc = AboutViewController()
         navigationController?.pushViewController(vc,animated: true)

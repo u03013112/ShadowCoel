@@ -16,6 +16,7 @@ class RequestDetailVC: SegmentPageVC {
         self.request = request
         self.pageVCs = [
             RequestOverviewVC(request: request),
+            HttpRequestVC(request: request),
         ]
         super.init(nibName: nil, bundle: nil)
     }
@@ -29,7 +30,7 @@ class RequestDetailVC: SegmentPageVC {
     }
 
     override func segmentsForSegmentPageVC() -> [String] {
-        return ["Overview"]
+        return ["Overview","Http Overview","Http Request","Http Response"]
     }
 
 }

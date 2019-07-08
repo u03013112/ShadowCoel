@@ -29,6 +29,7 @@ class _ProxyRow: Row<ProxyRowCell> {
 final class ProxyRow: _ProxyRow, RowType {
     required public init(tag: String?) {
         super.init(tag: tag)
+        displayValueFor = nil // 不重复显示
     }
 }
 
@@ -59,7 +60,7 @@ class ProxyRowCell: Cell<Proxy>, CellType {
         if let proxy = row.value {
             titleLabel.text = proxy.name
             iconImageView.isHidden = false
-            iconImageView.image = UIImage(named: "Shadowsocks")
+            iconImageView.image = UIImage(named: proxy.country!)
         }else {
             titleLabel.text = "None".localized()
             iconImageView.isHidden = true
@@ -71,8 +72,8 @@ class ProxyRowCell: Cell<Proxy>, CellType {
         }
         constrain(titleLabel, iconImageView, contentView, replace: group) { titleLabel, iconImageView, contentView in
             iconImageView.leading == contentView.leading + 16
-            iconImageView.width == 14
-            iconImageView.height == 14
+            iconImageView.width == 25
+            iconImageView.height == 25
             iconImageView.centerY == contentView.centerY
             titleLabel.centerY == iconImageView.centerY
             titleLabel.leading == iconImageView.trailing + 10

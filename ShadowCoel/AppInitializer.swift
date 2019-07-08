@@ -8,7 +8,7 @@
 import Foundation
 import ICSMainFramework
 import Appirater
-import LogglyLogger_CocoaLumberjack
+// import LogglyLogger_CocoaLumberjack
 
 let appID = "1463718156"
 
@@ -31,7 +31,8 @@ class AppInitializer: NSObject, AppLifeCycleProtocol {
         fileLogger?.rollingFrequency = TimeInterval(60*60*24*3)  // 24 hours
         fileLogger?.logFileManager.maximumNumberOfLogFiles = 7
         DDLog.add(fileLogger!)
-
+        
+        /*
         let logglyLogger = LogglyLogger() // Loggy Logger
         logglyLogger.logglyKey = InfoInternal.sharedInstance().getLogglyAPIKey()
         let fields = LogglyFields()
@@ -41,6 +42,7 @@ class AppInitializer: NSObject, AppLifeCycleProtocol {
         formatter?.alwaysIncludeRawMessage = false
         logglyLogger.logFormatter = formatter
         DDLog.add(logglyLogger)
+        */
 
         #if DEBUG
             DDLog.add(DDTTYLogger.sharedInstance) // TTY = Xcode console

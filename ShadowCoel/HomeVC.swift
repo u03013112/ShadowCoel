@@ -46,7 +46,8 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
     override func viewDidLoad() {
         super.viewDidLoad()
         // Fix a UI stuck bug
-        // navigationController?.delegate = self
+        navigationController?.delegate = self
+        self.tabBarController?.tabBar.barTintColor = Color.TabBackground
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -73,6 +74,7 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
 
     func updateTitle() {
         titleButton.setTitle(presenter.group.name, for: .normal)
+        titleButton.setTitleColor(Color.NavigationText, for: .normal)
         titleButton.sizeToFit()
     }
 
@@ -102,9 +104,6 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
     
     func generateProxySection() -> Section {
         let proxySection = Section()
-        proxySection <<< SwitchRow() {
-            $0.title = "12"
-        }
         if let proxy = presenter.proxy {
             proxySection <<< ProxyRow(kFormProxies) {
                 $0.value = proxy
@@ -134,7 +133,10 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
             $0.hidden = Condition.function([kFormProxies]) { [unowned self] form in
                 return self.presenter.proxy == nil
             }
-        }.onChange({ [unowned self] (row) in
+            }.cellUpdate { cell, _ in
+                cell.imageView?.image = UIImage(named: "Rudder")?.withRenderingMode(.alwaysTemplate)
+                cell.imageView?.tintColor = Color.ButtonIcon
+            }.onChange({ [unowned self] (row) in
             do {
                 try defaultRealm.write {
                     self.presenter.group.defaultToProxy = row.value ?? true
@@ -150,6 +152,17 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
             cell.textField.placeholder = "System DNS".localized()
             cell.textField.autocorrectionType = .no
             cell.textField.autocapitalizationType = .none
+            }.cellUpdate { cell, _ in
+                cell.imageView?.image = UIImage(named: "DNS")?.withRenderingMode(.alwaysTemplate)
+                cell.imageView?.tintColor = Color.ButtonIcon
+            }
+        <<< ButtonRow() {
+                $0.title = "Lantency Test"
+        }.cellUpdate { cell, _ in
+            cell.imageView?.image = UIImage(named: "Speedometer")?.withRenderingMode(.alwaysTemplate)
+            cell.imageView?.tintColor = Color.ButtonIcon
+            cell.textLabel?.textAlignment = .left
+            cell.textLabel?.textColor = UIColor.black
         }
         return proxySection
     }

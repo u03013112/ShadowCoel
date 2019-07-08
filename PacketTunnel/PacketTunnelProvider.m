@@ -85,6 +85,7 @@
                 continue;
             }
             d[@"url"] = [NSString stringWithCString:url encoding:NSUTF8StringEncoding];
+            d[@"path"] = @(client->http->path);
             d[@"method"] = @(client->http->gpc);
             for (int i=0; i < TIME_STAGE_COUNT; i++) {
                 d[[NSString stringWithFormat:@"time%d", i]] = @(client->time_stages[i]);

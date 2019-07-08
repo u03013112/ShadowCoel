@@ -26,8 +26,10 @@ target "ShadowCoel" do
     pod 'ObjectMapper'
     pod 'CocoaLumberjack/Swift', '~> 3.4.1'
     pod 'PSOperations/Core'
-    pod 'LogglyLogger-CocoaLumberjack', '~> 3.0.0'
+    #pod 'LogglyLogger-CocoaLumberjack', '~> 3.0.0'
     pod 'AcknowList'
+    pod 'EFQRCode', '~> 4.5.0'
+    pod "MMDB-Swift"
     library
     model
 end

@@ -60,6 +60,7 @@
 "Feedback" = "Feedback";
 "Follow on Twitter" = "Follow on Twitter";
 "Follow on Weibo" = "Follow on Weibo";
+"Group Name" = "Group Name";
 "Home" = "Home";
 "Host" = "Host";
 "Host can't be empty" = "Host can't be empty";
@@ -77,6 +78,7 @@
 "Logging is disabled" = "Logging is disabled";
 "Logs" = "Logs";
 "Manage" = "Manage";
+"Manual Settings" = "Manual Settings";
 "More" = "More";
 "Name" = "Name";
 "Name already exists" = "Name already exists";

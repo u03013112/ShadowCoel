@@ -16,7 +16,8 @@ public enum ProxyConfigurationError: Error {
 }
 
 private let kProxyFormType = "type"
-private let KProxyFormCountry = "country"
+private let kProxyFormCountry = "country"
+private let kProxyFormGroup = "group"
 private let kProxyFormName = "name"
 private let kProxyFormHost = "host"
 private let kProxyFormPort = "port"
@@ -104,15 +105,33 @@ class ProxyConfigurationViewController: FormViewController {
                     }
             }
         form +++ Section()
-            <<< PushRow<String>(KProxyFormCountry) {
+            <<< PushRow<String>(kProxyFormCountry) {
                 $0.title = "Country"
-            }
+                $0.value = self.upstreamProxy.country
+                $0.options = Country.countrylist
+                $0.selectorTitle = "Choose a Country".localized()
+                }.onPresent { from, to in
+                    to.selectableRowCellUpdate = { (cell, row) in
+                        let text = row.selectableValue
+                        cell.imageView?.image = UIImage(named: text!)
+                    }
+                }
         form +++ Section()
+            <<< TextRow(kProxyFormGroup) {
+                $0.title = "Group".localized()
+                $0.value = self.upstreamProxy.group
+                }.cellSetup { cell, row in
+                    cell.textField.placeholder = "Group Name".localized()
+                    cell.textField.autocorrectionType = .no
+                    cell.textField.autocapitalizationType = .none
+            }
             <<< TextRow(kProxyFormName) {
                 $0.title = "Name".localized()
                 $0.value = self.upstreamProxy.name
                 }.cellSetup { cell, row in
                     cell.textField.placeholder = "Proxy Name".localized()
+                    cell.textField.autocorrectionType = .no
+                    cell.textField.autocapitalizationType = .none
             }
             <<< TextRow(kProxyFormHost) {
                 $0.title = "Host".localized()
@@ -385,18 +404,20 @@ class ProxyConfigurationViewController: FormViewController {
         }
         form +++ Section()
             <<< ActionRow() {
-                $0.title = "Share QRCode"
+                $0.title = "Share QRCode".localized()
                 $0.hidden = Condition(booleanLiteral: !isEdit)
-        }
+                }.onCellSelection({ [unowned self] (cell, row) -> () in
+                    self.shareQRCode()
+                })
             <<< ActionRow() {
-                $0.title = "Share Url"
+                $0.title = "Share Url".localized()
                 $0.hidden = Condition(booleanLiteral: !isEdit)
                 }.onCellSelection({ [unowned self] (cell, row) -> () in
                     self.shareuri()
                 })
         form +++ Section()
             <<< ButtonRow() {
-                $0.title = "Delete"
+                $0.title = "Delete".localized()
                 $0.hidden = Condition(booleanLiteral: !isEdit)
         }.cellUpdate({ cell, row in
             cell.textLabel?.textColor = UIColor.red // 设置颜色为红色
@@ -537,12 +558,13 @@ class ProxyConfigurationViewController: FormViewController {
     }
     
     func shareQRCode() {
-        let _ = 123
+        let vc = QRCodeViewController(url: self.upstreamProxy.Uri())
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     func shareuri() {
         UIPasteboard.general.string = self.upstreamProxy.Uri()
-        showTextHUD("Success".localized(), dismissAfterDelay: 1.5)
+        showTextHUD("Success".localized(), dismissAfterDelay: 1.0)
     }
     
     func deleteproxy() {
@@ -598,8 +620,10 @@ class ProxyConfigurationViewController: FormViewController {
             }
             let ota = values[kProxyFormOta] as? Bool ?? false
             upstreamProxy.type = type // ss,ssr类型
+            upstreamProxy.group = values[kProxyFormGroup] as? String // 群组名
             upstreamProxy.name = name // ss,ssr名称
             upstreamProxy.host = host // ss,ssr地址
+            upstreamProxy.country = values[kProxyFormCountry] as? String
             upstreamProxy.port = port // ss,ssr端口
             upstreamProxy.authscheme = authscheme // ss,ssr加密方式
             upstreamProxy.user = user

@@ -8,6 +8,96 @@
 	<string>ShadowCoel</string>
 	<key>CFBundleExecutable</key>
 	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIcons</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>JinRiTouTiao</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>JinRiTouTiao</string>
+				</array>
+			</dict>
+			<key>KuaiShou</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>KuaiShou</string>
+				</array>
+			</dict>
+			<key>ShadowCoel</key>
+			<dict/>
+			<key>ShadowCoel-BluePurple</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>ShadowCoel-BluePurple</string>
+				</array>
+			</dict>
+			<key>ShadowCoel-Gold</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>ShadowCoel-Gold</string>
+				</array>
+			</dict>
+			<key>ShadowCoel-Water</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>ShadowCoel-Water</string>
+				</array>
+			</dict>
+			<key>TikTok</key>
+			<dict>
+				<key>CFBundleIconFiles</key>
+				<array>
+					<string>TikTok</string>
+				</array>
+			</dict>
+		</dict>
+		<key>CFBundlePrimaryIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string></string>
+			</array>
+			<key>UIPrerenderedIcon</key>
+			<false/>
+		</dict>
+		<key>UINewsstandIcon</key>
+		<dict>
+			<key>CFBundleIconFiles</key>
+			<array>
+				<string></string>
+			</array>
+			<key>UINewsstandBindingEdge</key>
+			<string>UINewsstandBindingEdgeLeft</string>
+			<key>UINewsstandBindingType</key>
+			<string>UINewsstandBindingTypeMagazine</string>
+		</dict>
+	</dict>
+	<key>CFBundleIcons~ipad</key>
+	<dict>
+		<key>CFBundleAlternateIcons</key>
+		<dict>
+			<key>ShadowCoel-BluePurple</key>
+			<dict>
+				<key>CFBundleFilesIcons</key>
+				<array>
+					<string>ShadowCoel-BluePurple</string>
+				</array>
+			</dict>
+			<key>ShadowCoel-Gold</key>
+			<dict>
+				<key>CFBundleFilesIcons</key>
+				<array>
+					<string>ShadowCoel-Gold</string>
+				</array>
+			</dict>
+		</dict>
+	</dict>
 	<key>CFBundleIdentifier</key>
 	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
 	<key>CFBundleInfoDictionaryVersion</key>
@@ -17,7 +107,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.0</string>
+	<string>1.0.1</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -30,7 +120,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>10</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>ITSAppUsesNonExemptEncryption</key>
 	<false/>
 	<key>LSRequiresIPhoneOS</key>

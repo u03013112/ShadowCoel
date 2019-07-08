@@ -35,7 +35,7 @@ class DataInitializer: NSObject, AppLifeCycleProtocol {
         Receipt.shared.validate()
         sync()
     }
-
+    
     func sync() {
         SyncManager.shared.sync()
     }

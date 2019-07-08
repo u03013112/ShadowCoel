@@ -38,11 +38,13 @@
 "Default" = "默认";
 "Default Route Match" = "默认路由匹配";
 "Default To Proxy" = "默认走代理";
+"Delete" = "删除";
 "Detail" = "详情";
 "Disconnect" = "断开";
 "Edit Proxy" = "编辑代理";
 "Edit Rule" = "编辑规则";
 "Edit Rule Set" = "编辑规则组";
+"Edit Subscription" = "编辑订阅";
 "Encryption" = "加密";
 "Fail" = "失败";
 "Fail to add ruleset" = "添加规则组失败";
@@ -62,6 +64,7 @@
 "Follow on Twitter" = "在推特上关注我";
 "Follow on Github" = "在Github上关注我";
 "Get Source Code" = "获取源代码";
+"Group Name" = "群组名";
 "Home" = "首页";
 "Host" = "服务器";
 "Host can't be empty" = "服务器不能为空";
@@ -78,6 +81,7 @@
 "Invalid port" = "无效的端口";
 "Logging is disabled" = "日志已禁用";
 "Logs" = "日志";
+"Manual Settings" = "手动设置";
 "Manage" = "管理";
 "More" = "更多";
 "Name" = "名称";
@@ -97,7 +101,7 @@
 "Port" = "端口";
 "Port can't be empty" = "端口不能为空";
 "Protocol" = "协议插件(protocol)";
-"Protocol Param" = "混淆插件参数";
+"Protocol Param" = "协议插件参数";
 "Proxy" = "代理";
 "Proxy Connection" = "代理连接";
 "Proxy Connection Established" = "代理连接建立成功";
@@ -118,8 +122,11 @@
 "Rule Set" = "规则组";
 "Rule Set Name" = "规则组名称";
 "Rules" = "规则";
+"Server" = "服务器";
 "SSR Obfs Param" = "SSR 混淆插件参数";
 "ShadowCoel is not connected" = "ShadowCoel 已断开";
+"Share QRCode" = "分享二维码";
+"Share Url" = "分享Url链接";
 "Share with friends" = "分享给朋友";
 "Start" = "开始";
 "Start DNS Query" = "开始 DNS 查询";

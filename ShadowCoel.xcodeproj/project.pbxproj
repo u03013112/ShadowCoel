@@ -16,13 +16,6 @@
 		1EF602951F113A660005E0C7 /* GeoLite2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = 1EF602941F113A660005E0C7 /* GeoLite2-Country.mmdb */; };
 		2F5EE57E0687D8533454D2DF /* Pods_ShadowCoel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 87762605D2086ABC8A92E142 /* Pods_ShadowCoel.framework */; };
 		3880684779850530AFBD4C88 /* Pods_PacketTunnel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A478ADBAAA1661B3FB51E4D3 /* Pods_PacketTunnel.framework */; };
-		3A104BCE2073C55D00C848D5 /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BB92073C4AB00C848D5 /* libsodium.framework */; };
-		3A104BCF2073C55D00C848D5 /* libuv.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BC22073C4CD00C848D5 /* libuv.framework */; };
-		3A104BD02073C55D00C848D5 /* mbedtls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BCB2073C4DF00C848D5 /* mbedtls.framework */; };
-		3A104BD42073C5D900C848D5 /* mbedtls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BCB2073C4DF00C848D5 /* mbedtls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A104BD62073C5D900C848D5 /* libuv.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BC22073C4CD00C848D5 /* libuv.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A104BD82073C5D900C848D5 /* libsodium.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BB92073C4AB00C848D5 /* libsodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A104BE02073C6DA00C848D5 /* Profile.m in Sources */ = {isa = PBXBuildFile; fileRef = 3A104BDF2073C6D900C848D5 /* Profile.m */; };
 		3A104BE22073DE9A00C848D5 /* libcrypto.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A104BE12073DE9900C848D5 /* libcrypto.a */; };
 		3A14EE9521B44F55006291BC /* MMWormhole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8AC91620754396002843E0 /* MMWormhole.framework */; };
 		3A14EE9621B44FC1006291BC /* MMWormhole.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8AC91620754396002843E0 /* MMWormhole.framework */; };
@@ -32,9 +25,6 @@
 		3A262D5A207A85CE00073C87 /* CallbackURLKitClients.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A262D51207A850300073C87 /* CallbackURLKitClients.framework */; };
 		3A57D262207290AC000520F8 /* Eureka.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A57D25F20728FFF000520F8 /* Eureka.framework */; };
 		3A57D263207290AC000520F8 /* Eureka.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A57D25F20728FFF000520F8 /* Eureka.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A657506207C4D790030BDE0 /* ssrLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A657503207C4CAF0030BDE0 /* ssrLocal.framework */; };
-		3A657507207C4D790030BDE0 /* ssrLocal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A657503207C4CAF0030BDE0 /* ssrLocal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		3A65750C207C4DD30030BDE0 /* ssrLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A657503207C4CAF0030BDE0 /* ssrLocal.framework */; };
 		3A739BCE20763B530069F21C /* libmaxminddb.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A739BCD20763B530069F21C /* libmaxminddb.framework */; };
 		3A739BCF20763B530069F21C /* libmaxminddb.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A739BCD20763B530069F21C /* libmaxminddb.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3A8780C320754A2900B96BF3 /* KissXML.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3A8780B1207549F800B96BF3 /* KissXML.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -54,19 +44,56 @@
 		3ADE7D002073733D000F70AA /* yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE7CF82073729B000F70AA /* yaml.framework */; };
 		3ADE7D0320737366000F70AA /* yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3ADE7CF82073729B000F70AA /* yaml.framework */; };
 		479C711B68EF0702C9F65B5B /* Pods_TodayWidget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A692B80DC5DB316AA1DED8CB /* Pods_TodayWidget.framework */; };
+		5606B7C422B4CBEC00FA3BAC /* ShadowCoel-BluePurple@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5606B7C222B4CBEB00FA3BAC /* ShadowCoel-BluePurple@2x.png */; };
+		5606B7C522B4CBEC00FA3BAC /* ShadowCoel-BluePurple@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 5606B7C322B4CBEB00FA3BAC /* ShadowCoel-BluePurple@3x.png */; };
+		560C48E3229EA56A00363625 /* SubscribeRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 560C48E2229EA56A00363625 /* SubscribeRow.swift */; };
+		560F9A9A22BC61C000511397 /* TieLu12306@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F9A9822BC61B600511397 /* TieLu12306@2x.png */; };
+		560F9A9B22BC61C000511397 /* TieLu12306@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 560F9A9922BC61C000511397 /* TieLu12306@3x.png */; };
 		56173BF5228C3AEB0085A625 /* UrlSchemesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56173BE2228C3AEB0085A625 /* UrlSchemesViewController.swift */; };
 		56173BF6228C3AEB0085A625 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56173BE3228C3AEB0085A625 /* AboutViewController.swift */; };
+		5618FBF222B92A82003A37F5 /* Network.m in Sources */ = {isa = PBXBuildFile; fileRef = 5618FBF122B92A82003A37F5 /* Network.m */; };
+		562D6EBC22ADE4EC008317C4 /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 562D6EBB22ADE4EC008317C4 /* ColorManager.swift */; };
+		5649FE1A22B3F912006B6862 /* IPLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5649FE1922B3F912006B6862 /* IPLocation.swift */; };
 		5658EA4C229CDE4B001E6A31 /* FlagKit.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5658EA4B229CDE4B001E6A31 /* FlagKit.xcassets */; };
+		565B6C9522B8842B0048C02C /* Diagnostics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 565B6C9422B8842B0048C02C /* Diagnostics.swift */; };
+		566FB9D922B721800026A957 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566FB9C722B721800026A957 /* Country.swift */; };
+		566FB9DF22B781370026A957 /* HideVpnIconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 566FB9DE22B781370026A957 /* HideVpnIconViewController.swift */; };
 		567D67BB2290737F0049BF6F /* SiriViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567D67BA2290737F0049BF6F /* SiriViewController.swift */; };
 		567D67BE22929C1E0049BF6F /* Subscribe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 567D67BD22929C1D0049BF6F /* Subscribe.swift */; };
 		5688A1722299430F0099A130 /* Sirl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688A1712299430F0099A130 /* Sirl.swift */; };
 		5688A176229ADB520099A130 /* QRCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688A175229ADB520099A130 /* QRCodeViewController.swift */; };
 		5688A17C229BD2DF0099A130 /* SubscriptionConfigurationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5688A17B229BD2DF0099A130 /* SubscriptionConfigurationViewController.swift */; };
+		56963F5822AD20C600AB3126 /* IconViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56963F5722AD20C600AB3126 /* IconViewController.swift */; };
+		56963F6B22AD35AD00AB3126 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56963F6A22AD35AD00AB3126 /* UIColorExtension.swift */; };
 		56B1E771228C43BE0000703E /* SubscriptionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B1E75F228C43BE0000703E /* SubscriptionListViewController.swift */; };
+		56B2DCE022BB062600B6CC12 /* HttpRequestVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56B2DCDF22BB062600B6CC12 /* HttpRequestVC.swift */; };
+		56B2DD3422BBAA9900B6CC12 /* KuaiShou@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B2DD2222BBAA9900B6CC12 /* KuaiShou@2x.png */; };
+		56B2DD3622BBAAE500B6CC12 /* KuaiShou@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B2DD3522BBAAE500B6CC12 /* KuaiShou@3x.png */; };
+		56B2DD3822BBB28700B6CC12 /* TikTok@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B2DD3722BBB28600B6CC12 /* TikTok@2x.png */; };
+		56B2DD3A22BBB35900B6CC12 /* TikTok@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B2DD3922BBB35800B6CC12 /* TikTok@3x.png */; };
+		56B2DD3C22BBC5B600B6CC12 /* JinRiTouTiao@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56B2DD3B22BBC5B600B6CC12 /* JinRiTouTiao@2x.png */; };
+		56B2DD3E22BBC7AD00B6CC12 /* JinRiTouTiao@3x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 56B2DD3D22BBC7AD00B6CC12 /* JinRiTouTiao@3x.jpg */; };
+		56B3308522CBB2AF000AFA1D /* ssLocal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B0F22CB2C2A001EF1F6 /* ssLocal.framework */; };
+		56B3309422CBB2B7000AFA1D /* libsodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B2722CB2CD9001EF1F6 /* libsodium.framework */; };
+		56B3309522CBB362000AFA1D /* mbedtls.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B1B22CB2CB7001EF1F6 /* mbedtls.framework */; };
+		56B3309622CBB539000AFA1D /* c_ares.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B1522CB2C3B001EF1F6 /* c_ares.framework */; };
 		56B8FA5B228D1D250087DA7C /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56B8FA5A228D1D250087DA7C /* CloudKit.framework */; };
+		56C8E6D522B13BF600996143 /* ShadowCoel-Water@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C8E6D322B13BF600996143 /* ShadowCoel-Water@3x.png */; };
+		56C8E6D722B13C4D00996143 /* ShadowCoel-Water@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C8E6D622B13C4C00996143 /* ShadowCoel-Water@2x.png */; };
+		56C8E6DA22B13FF200996143 /* ShadowCoel-Gold@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C8E6D822B13FE600996143 /* ShadowCoel-Gold@3x.png */; };
+		56C8E6DB22B13FF200996143 /* ShadowCoel-Gold@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 56C8E6D922B13FF200996143 /* ShadowCoel-Gold@2x.png */; };
 		56CA29B9228CDC9700E46123 /* Pods-ShadowCoel-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56CA29A5228CDC9600E46123 /* Pods-ShadowCoel-acknowledgements.plist */; };
 		56CA29BA228CDC9700E46123 /* Pods-TodayWidget-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56CA29B7228CDC9700E46123 /* Pods-TodayWidget-acknowledgements.plist */; };
 		56CA29BB228CDC9700E46123 /* Pods-PacketTunnel-acknowledgements.plist in Resources */ = {isa = PBXBuildFile; fileRef = 56CA29B8228CDC9700E46123 /* Pods-PacketTunnel-acknowledgements.plist */; };
+		56CD431D229D509B00C0B06A /* EFQRCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CD431C229D509B00C0B06A /* EFQRCode.framework */; };
+		56D01C0322A7960C00C2A202 /* SubscribeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56D01C0222A7960C00C2A202 /* SubscribeManager.swift */; };
+		56DC4E8822ACA61E006B1975 /* DebugViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC4E8722ACA61E006B1975 /* DebugViewController.swift */; };
+		56DC4E8A22ACB227006B1975 /* ColorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56DC4E8922ACB227006B1975 /* ColorViewController.swift */; };
+		56EF0B2A22CB3614001EF1F6 /* ssLocal.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B0F22CB2C2A001EF1F6 /* ssLocal.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56EF0B2B22CB3623001EF1F6 /* libsodium.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B2722CB2CD9001EF1F6 /* libsodium.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56EF0B2C22CB3623001EF1F6 /* mbedtls.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B1B22CB2CB7001EF1F6 /* mbedtls.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56EF0B2D22CB3623001EF1F6 /* c_ares.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 56EF0B1522CB2C3B001EF1F6 /* c_ares.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		56F9E55422B85F5000EE5DDB /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F9E55322B85F5000EE5DDB /* Settings.swift */; };
 		939649B7FCC9A0C8AFB317B8 /* Pods_ShadowCoelModel.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2589D04E6C48F30ED63BA84F /* Pods_ShadowCoelModel.framework */; };
 		9B0CFA0F1C1C0B1B007BD7C6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B0CFA0E1C1C0B1B007BD7C6 /* AppDelegate.swift */; };
 		9B0CFA161C1C0B1B007BD7C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B0CFA151C1C0B1B007BD7C6 /* Assets.xcassets */; };
@@ -262,48 +289,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3A104BB82073C4AB00C848D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A104BB32073C4AB00C848D5 /* libsodium.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A3008B5206FED6500ABE7C2;
-			remoteInfo = "libsodium iOS";
-		};
-		3A104BBA2073C4AB00C848D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A104BB32073C4AB00C848D5 /* libsodium.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3AE1E1562070BF2E00B52995;
-			remoteInfo = "libsodium macOS";
-		};
-		3A104BC12073C4CD00C848D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A104BBC2073C4CD00C848D5 /* libuv.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A300801206FDDBB00ABE7C2;
-			remoteInfo = "libuv iOS";
-		};
-		3A104BC32073C4CD00C848D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A104BBC2073C4CD00C848D5 /* libuv.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3AE1E0722070ADF300B52995;
-			remoteInfo = "libuv macOS";
-		};
-		3A104BCA2073C4DF00C848D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A104BC52073C4DF00C848D5 /* mbedtls.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A597D9820314D1400710634;
-			remoteInfo = "mbedtls iOS";
-		};
-		3A104BCC2073C4DF00C848D5 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A104BC52073C4DF00C848D5 /* mbedtls.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3AE1E0B82070B46200B52995;
-			remoteInfo = "mbedtls macOS";
-		};
 		3A262D4C207A850300073C87 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 3A262D46207A850200073C87 /* CallbackURLKit.xcodeproj */;
@@ -359,34 +344,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = 51729DEA1B9A4F5E004A00EB;
 			remoteInfo = Eureka;
-		};
-		3A657502207C4CAF0030BDE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A6EB14A20784E3300763A08;
-			remoteInfo = "ssrLocal iOS";
-		};
-		3A657504207C4CAF0030BDE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 3A6EB15A20784F9100763A08;
-			remoteInfo = "ssrLocal macOS";
-		};
-		3A657508207C4D790030BDE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3A6EB14920784E3300763A08;
-			remoteInfo = "ssrLocal iOS";
-		};
-		3A65750A207C4DC00030BDE0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = 3A6EB14920784E3300763A08;
-			remoteInfo = "ssrLocal iOS";
 		};
 		3A739BC920761B850069F21C /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -535,6 +492,48 @@
 			remoteGlobalIDString = 3A663FDD2073701C0072D7FC;
 			remoteInfo = "yaml iOS";
 		};
+		56EF0B0E22CB2C2A001EF1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56EF0B0622CB2C29001EF1F6 /* ssLocal.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5618FC0E22B92F78003A37F5;
+			remoteInfo = ssLocal;
+		};
+		56EF0B1422CB2C3B001EF1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56EF0B1022CB2C3B001EF1F6 /* c-ares.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 560F9BEA22BE688200511397;
+			remoteInfo = "c-ares";
+		};
+		56EF0B1A22CB2CB7001EF1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56EF0B1622CB2CB7001EF1F6 /* mbedtls.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5618FC3322B9AFA5003A37F5;
+			remoteInfo = mbedtls;
+		};
+		56EF0B2022CB2CC7001EF1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56EF0B1C22CB2CC7001EF1F6 /* pcre.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 560F9B0522BE186B00511397;
+			remoteInfo = pcre;
+		};
+		56EF0B2622CB2CD9001EF1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56EF0B2222CB2CD9001EF1F6 /* libsodium.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5618FD9F22B9B1C7003A37F5;
+			remoteInfo = libsodium;
+		};
+		56EF0B2822CB35AE001EF1F6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 56EF0B0622CB2C29001EF1F6 /* ssLocal.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = 5618FC0D22B92F78003A37F5;
+			remoteInfo = ssLocal;
+		};
 		9B8193BC1CBCFEE700BE320D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9B0CFA031C1C0B1A007BD7C6 /* Project object */;
@@ -594,6 +593,20 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		56F5E84822C38C950073CA40 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				56EF0B2B22CB3623001EF1F6 /* libsodium.framework in Embed Frameworks */,
+				56EF0B2C22CB3623001EF1F6 /* mbedtls.framework in Embed Frameworks */,
+				56EF0B2D22CB3623001EF1F6 /* c_ares.framework in Embed Frameworks */,
+				56EF0B2A22CB3614001EF1F6 /* ssLocal.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9B8706081C1D788F00651424 /* Embed App Extensions */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -615,12 +628,8 @@
 				3A262D52207A855800073C87 /* CallbackURLKit.framework in Embed Frameworks */,
 				3A262D54207A855800073C87 /* CallbackURLKitClients.framework in Embed Frameworks */,
 				3A8780C320754A2900B96BF3 /* KissXML.framework in Embed Frameworks */,
-				3A657507207C4D790030BDE0 /* ssrLocal.framework in Embed Frameworks */,
 				3A8AC91D207543B0002843E0 /* MMWormhole.framework in Embed Frameworks */,
 				3A8AC8D620753BAF002843E0 /* CocoaAsyncSocket.framework in Embed Frameworks */,
-				3A104BD42073C5D900C848D5 /* mbedtls.framework in Embed Frameworks */,
-				3A104BD62073C5D900C848D5 /* libuv.framework in Embed Frameworks */,
-				3A104BD82073C5D900C848D5 /* libsodium.framework in Embed Frameworks */,
 				3A739BCF20763B530069F21C /* libmaxminddb.framework in Embed Frameworks */,
 				3ADE7CFB207372E1000F70AA /* yaml.framework in Embed Frameworks */,
 				B88874491D18186100AEF002 /* ShadowPath.framework in Embed Frameworks */,
@@ -647,15 +656,9 @@
 		217DDEB43D39CFD980088F46 /* Pods-ShadowCoelModel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoelModel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoelModel/Pods-ShadowCoelModel.debug.xcconfig"; sourceTree = "<group>"; };
 		2589D04E6C48F30ED63BA84F /* Pods_ShadowCoelModel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowCoelModel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2AE5B01A5E9CF50CB9760E6E /* Pods-PacketTunnel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.release.xcconfig"; path = "Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.release.xcconfig"; sourceTree = "<group>"; };
-		3A104BB32073C4AB00C848D5 /* libsodium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libsodium.xcodeproj; path = Library/ssrNative/depends/libsodium/ios/libsodium.xcodeproj; sourceTree = SOURCE_ROOT; };
-		3A104BBC2073C4CD00C848D5 /* libuv.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libuv.xcodeproj; path = Library/ssrNative/depends/libuv/ios/libuv.xcodeproj; sourceTree = SOURCE_ROOT; };
-		3A104BC52073C4DF00C848D5 /* mbedtls.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mbedtls.xcodeproj; path = Library/ssrNative/depends/mbedtls/ios/mbedtls.xcodeproj; sourceTree = SOURCE_ROOT; };
-		3A104BDE2073C6D900C848D5 /* Profile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Profile.h; sourceTree = "<group>"; };
-		3A104BDF2073C6D900C848D5 /* Profile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Profile.m; sourceTree = "<group>"; };
 		3A104BE12073DE9900C848D5 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = Library/openssl/lib/libcrypto.a; sourceTree = SOURCE_ROOT; };
 		3A262D46207A850200073C87 /* CallbackURLKit.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CallbackURLKit.xcodeproj; path = Library/CallbackURLKit/CallbackURLKit.xcodeproj; sourceTree = "<group>"; };
 		3A57D25920728FFE000520F8 /* Eureka.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Eureka.xcodeproj; path = Library/Eureka/Eureka.xcodeproj; sourceTree = SOURCE_ROOT; };
-		3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ssrLocal.xcodeproj; path = Library/ssrNative/ios/ssrLocal.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3A6DD4F2207366BF00BDF530 /* YAML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = YAML.xcodeproj; path = Library/yaml/YAML.xcodeproj; sourceTree = SOURCE_ROOT; };
 		3A739BCD20763B530069F21C /* libmaxminddb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = libmaxminddb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A8780A6207549F800B96BF3 /* KissXML.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KissXML.xcodeproj; path = Library/KissXML/KissXML.xcodeproj; sourceTree = "<group>"; };
@@ -670,20 +673,58 @@
 		3AF6B04A2084B04900A4AA06 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = CocoaLumberjack.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5494FBA89E140F817CCF2ACA /* Pods_ShadowCoelLibrary.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowCoelLibrary.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5509E684B48A8007AADADA51 /* Pods-ShadowCoelModel.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoelModel.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoelModel/Pods-ShadowCoelModel.release.xcconfig"; sourceTree = "<group>"; };
+		5606B7C222B4CBEB00FA3BAC /* ShadowCoel-BluePurple@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowCoel-BluePurple@2x.png"; sourceTree = "<group>"; };
+		5606B7C322B4CBEB00FA3BAC /* ShadowCoel-BluePurple@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowCoel-BluePurple@3x.png"; sourceTree = "<group>"; };
+		560C48E2229EA56A00363625 /* SubscribeRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeRow.swift; sourceTree = "<group>"; };
+		560F9A9822BC61B600511397 /* TieLu12306@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TieLu12306@2x.png"; sourceTree = "<group>"; };
+		560F9A9922BC61C000511397 /* TieLu12306@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TieLu12306@3x.png"; sourceTree = "<group>"; };
 		56173BE2228C3AEB0085A625 /* UrlSchemesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UrlSchemesViewController.swift; sourceTree = "<group>"; };
 		56173BE3228C3AEB0085A625 /* AboutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		5618FBF122B92A82003A37F5 /* Network.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Network.m; sourceTree = "<group>"; };
+		562D6EBB22ADE4EC008317C4 /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorManager.swift; sourceTree = "<group>"; };
+		563AAF9122A0FB330068D02D /* ICSMainFramework.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ICSMainFramework.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5646718A229D4F610072A8FB /* EFQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EFQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5649FE1922B3F912006B6862 /* IPLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IPLocation.swift; sourceTree = "<group>"; };
 		5658EA15229CC346001E6A31 /* FlagKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FlagKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5658EA4B229CDE4B001E6A31 /* FlagKit.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = FlagKit.xcassets; sourceTree = "<group>"; };
+		565B6C9422B8842B0048C02C /* Diagnostics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Diagnostics.swift; sourceTree = "<group>"; };
+		566FB9C722B721800026A957 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		566FB9DE22B781370026A957 /* HideVpnIconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideVpnIconViewController.swift; sourceTree = "<group>"; };
 		567D67BA2290737F0049BF6F /* SiriViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriViewController.swift; sourceTree = "<group>"; };
 		567D67BD22929C1D0049BF6F /* Subscribe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subscribe.swift; sourceTree = "<group>"; };
 		5688A1712299430F0099A130 /* Sirl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sirl.swift; sourceTree = "<group>"; };
 		5688A175229ADB520099A130 /* QRCodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeViewController.swift; sourceTree = "<group>"; };
 		5688A17B229BD2DF0099A130 /* SubscriptionConfigurationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionConfigurationViewController.swift; sourceTree = "<group>"; };
+		568D877122A0F70500802630 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56963F5722AD20C600AB3126 /* IconViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconViewController.swift; sourceTree = "<group>"; };
+		56963F6A22AD35AD00AB3126 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		56B1E75F228C43BE0000703E /* SubscriptionListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubscriptionListViewController.swift; sourceTree = "<group>"; };
+		56B2DCDF22BB062600B6CC12 /* HttpRequestVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestVC.swift; sourceTree = "<group>"; };
+		56B2DD2222BBAA9900B6CC12 /* KuaiShou@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KuaiShou@2x.png"; sourceTree = "<group>"; };
+		56B2DD3522BBAAE500B6CC12 /* KuaiShou@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "KuaiShou@3x.png"; sourceTree = "<group>"; };
+		56B2DD3722BBB28600B6CC12 /* TikTok@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TikTok@2x.png"; sourceTree = "<group>"; };
+		56B2DD3922BBB35800B6CC12 /* TikTok@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "TikTok@3x.png"; sourceTree = "<group>"; };
+		56B2DD3B22BBC5B600B6CC12 /* JinRiTouTiao@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "JinRiTouTiao@2x.png"; sourceTree = "<group>"; };
+		56B2DD3D22BBC7AD00B6CC12 /* JinRiTouTiao@3x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "JinRiTouTiao@3x.jpg"; sourceTree = "<group>"; };
 		56B8FA5A228D1D250087DA7C /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		56C1844C22A0F80A00F6921A /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Alamofire.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56C8E6D322B13BF600996143 /* ShadowCoel-Water@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowCoel-Water@3x.png"; sourceTree = "<group>"; };
+		56C8E6D622B13C4C00996143 /* ShadowCoel-Water@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowCoel-Water@2x.png"; sourceTree = "<group>"; };
+		56C8E6D822B13FE600996143 /* ShadowCoel-Gold@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowCoel-Gold@3x.png"; sourceTree = "<group>"; };
+		56C8E6D922B13FF200996143 /* ShadowCoel-Gold@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShadowCoel-Gold@2x.png"; sourceTree = "<group>"; };
 		56CA29A5228CDC9600E46123 /* Pods-ShadowCoel-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-ShadowCoel-acknowledgements.plist"; sourceTree = "<group>"; };
 		56CA29B7228CDC9700E46123 /* Pods-TodayWidget-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-TodayWidget-acknowledgements.plist"; sourceTree = "<group>"; };
 		56CA29B8228CDC9700E46123 /* Pods-PacketTunnel-acknowledgements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Pods-PacketTunnel-acknowledgements.plist"; sourceTree = "<group>"; };
+		56CD431C229D509B00C0B06A /* EFQRCode.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = EFQRCode.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56D01C0222A7960C00C2A202 /* SubscribeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscribeManager.swift; sourceTree = "<group>"; };
+		56DC4E8722ACA61E006B1975 /* DebugViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugViewController.swift; sourceTree = "<group>"; };
+		56DC4E8922ACB227006B1975 /* ColorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorViewController.swift; sourceTree = "<group>"; };
+		56EF0B0622CB2C29001EF1F6 /* ssLocal.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = ssLocal.xcodeproj; path = Library/ssLocal/ssLocal.xcodeproj; sourceTree = SOURCE_ROOT; };
+		56EF0B1022CB2C3B001EF1F6 /* c-ares.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = "c-ares.xcodeproj"; path = "Library/ssLocal/depends/c-ares/c-ares.xcodeproj"; sourceTree = SOURCE_ROOT; };
+		56EF0B1622CB2CB7001EF1F6 /* mbedtls.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = mbedtls.xcodeproj; path = Library/ssLocal/depends/mbedtls/mbedtls.xcodeproj; sourceTree = SOURCE_ROOT; };
+		56EF0B1C22CB2CC7001EF1F6 /* pcre.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = pcre.xcodeproj; path = Library/ssLocal/depends/pcre/pcre.xcodeproj; sourceTree = SOURCE_ROOT; };
+		56EF0B2222CB2CD9001EF1F6 /* libsodium.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = libsodium.xcodeproj; path = Library/ssLocal/depends/libsodium/libsodium.xcodeproj; sourceTree = SOURCE_ROOT; };
+		56F9E55322B85F5000EE5DDB /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		61F603707715DCFA28936BB5 /* Pods-ShadowCoelLibrary.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoelLibrary.release.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoelLibrary/Pods-ShadowCoelLibrary.release.xcconfig"; sourceTree = "<group>"; };
 		62905CBD94865A9DB7C6AADC /* Pods-PacketTunnel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PacketTunnel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PacketTunnel/Pods-PacketTunnel.debug.xcconfig"; sourceTree = "<group>"; };
 		6C82CD7437FBA5F74EB08670 /* Pods_ShadowCoel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ShadowCoel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1254,9 +1295,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56CD431D229D509B00C0B06A /* EFQRCode.framework in Frameworks */,
 				3A8AC926207544C8002843E0 /* MMWormhole.framework in Frameworks */,
 				56B8FA5B228D1D250087DA7C /* CloudKit.framework in Frameworks */,
-				3A657506207C4D790030BDE0 /* ssrLocal.framework in Frameworks */,
 				B86B08ED1D17FB9B00613014 /* ShadowPath.framework in Frameworks */,
 				3A57D262207290AC000520F8 /* Eureka.framework in Frameworks */,
 				1EEBB8771FFFD4B500EB33C3 /* NetworkExtension.framework in Frameworks */,
@@ -1294,11 +1335,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A65750C207C4DD30030BDE0 /* ssrLocal.framework in Frameworks */,
+				56B3309622CBB539000AFA1D /* c_ares.framework in Frameworks */,
+				56B3309522CBB362000AFA1D /* mbedtls.framework in Frameworks */,
+				56B3309422CBB2B7000AFA1D /* libsodium.framework in Frameworks */,
+				56B3308522CBB2AF000AFA1D /* ssLocal.framework in Frameworks */,
 				3A8AC92320754441002843E0 /* MMWormhole.framework in Frameworks */,
-				3A104BCE2073C55D00C848D5 /* libsodium.framework in Frameworks */,
-				3A104BCF2073C55D00C848D5 /* libuv.framework in Frameworks */,
-				3A104BD02073C55D00C848D5 /* mbedtls.framework in Frameworks */,
 				3ADE7D002073733D000F70AA /* yaml.framework in Frameworks */,
 				B86B08EC1D17F85800613014 /* ShadowPath.framework in Frameworks */,
 				9BC600361CB29AFF00E5EA61 /* ShadowCoelBase.framework in Frameworks */,
@@ -1368,33 +1409,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		3A104BB42073C4AB00C848D5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A104BB92073C4AB00C848D5 /* libsodium.framework */,
-				3A104BBB2073C4AB00C848D5 /* libsodium.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A104BBD2073C4CD00C848D5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A104BC22073C4CD00C848D5 /* libuv.framework */,
-				3A104BC42073C4CD00C848D5 /* libuv.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A104BC62073C4DF00C848D5 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A104BCB2073C4DF00C848D5 /* mbedtls.framework */,
-				3A104BCD2073C4DF00C848D5 /* mbedtls.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		3A262D47207A850200073C87 /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -1410,15 +1424,6 @@
 			children = (
 				3A57D25F20728FFF000520F8 /* Eureka.framework */,
 				3A57D26120728FFF000520F8 /* EurekaTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		3A6574FE207C4CAF0030BDE0 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				3A657503207C4CAF0030BDE0 /* ssrLocal.framework */,
-				3A657505207C4CAF0030BDE0 /* ssrLocal.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1472,6 +1477,78 @@
 			path = More/About;
 			sourceTree = "<group>";
 		};
+		568299A422B0B4AA00768470 /* Icon */ = {
+			isa = PBXGroup;
+			children = (
+				560F9A9822BC61B600511397 /* TieLu12306@2x.png */,
+				560F9A9922BC61C000511397 /* TieLu12306@3x.png */,
+				56B2DD3B22BBC5B600B6CC12 /* JinRiTouTiao@2x.png */,
+				56B2DD3D22BBC7AD00B6CC12 /* JinRiTouTiao@3x.jpg */,
+				56B2DD3722BBB28600B6CC12 /* TikTok@2x.png */,
+				56B2DD3922BBB35800B6CC12 /* TikTok@3x.png */,
+				56B2DD2222BBAA9900B6CC12 /* KuaiShou@2x.png */,
+				56B2DD3522BBAAE500B6CC12 /* KuaiShou@3x.png */,
+				5606B7C222B4CBEB00FA3BAC /* ShadowCoel-BluePurple@2x.png */,
+				5606B7C322B4CBEB00FA3BAC /* ShadowCoel-BluePurple@3x.png */,
+				56C8E6D922B13FF200996143 /* ShadowCoel-Gold@2x.png */,
+				56C8E6D822B13FE600996143 /* ShadowCoel-Gold@3x.png */,
+				56C8E6D622B13C4C00996143 /* ShadowCoel-Water@2x.png */,
+				56C8E6D322B13BF600996143 /* ShadowCoel-Water@3x.png */,
+			);
+			name = Icon;
+			sourceTree = "<group>";
+		};
+		56DC4E7522ACA5B1006B1975 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				56DC4E8722ACA61E006B1975 /* DebugViewController.swift */,
+				56DC4E8922ACB227006B1975 /* ColorViewController.swift */,
+				56963F5722AD20C600AB3126 /* IconViewController.swift */,
+				565B6C9422B8842B0048C02C /* Diagnostics.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		56EF0B0722CB2C29001EF1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56EF0B0F22CB2C2A001EF1F6 /* ssLocal.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56EF0B1122CB2C3B001EF1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56EF0B1522CB2C3B001EF1F6 /* c_ares.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56EF0B1722CB2CB7001EF1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56EF0B1B22CB2CB7001EF1F6 /* mbedtls.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56EF0B1D22CB2CC7001EF1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56EF0B2122CB2CC7001EF1F6 /* libpcre.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		56EF0B2322CB2CD9001EF1F6 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				56EF0B2722CB2CD9001EF1F6 /* libsodium.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		9B0CFA021C1C0B1A007BD7C6 = {
 			isa = PBXGroup;
 			children = (
@@ -1510,6 +1587,7 @@
 		9B0CFA0D1C1C0B1B007BD7C6 /* ShadowCoel */ = {
 			isa = PBXGroup;
 			children = (
+				568299A422B0B4AA00768470 /* Icon */,
 				56CA29B8228CDC9700E46123 /* Pods-PacketTunnel-acknowledgements.plist */,
 				56CA29A5228CDC9600E46123 /* Pods-ShadowCoel-acknowledgements.plist */,
 				56CA29B7228CDC9700E46123 /* Pods-TodayWidget-acknowledgements.plist */,
@@ -1542,7 +1620,6 @@
 				5658EA4B229CDE4B001E6A31 /* FlagKit.xcassets */,
 				9B0CFA1A1C1C0B1B007BD7C6 /* Info.plist */,
 				B8319A0F1D1BD696001E50C2 /* Localizable.strings */,
-				5688A175229ADB520099A130 /* QRCodeViewController.swift */,
 			);
 			path = ShadowCoel;
 			sourceTree = "<group>";
@@ -1550,10 +1627,13 @@
 		9B17F8EC1C53392D00679FCB /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				5618FBF122B92A82003A37F5 /* Network.m */,
 				9B17F8EF1C533BBF00679FCB /* Color.swift */,
+				56963F6A22AD35AD00AB3126 /* UIColorExtension.swift */,
 				9B1D9B7A1CA4C45F0078D814 /* HUDUtils.swift */,
 				9BD4CAC91CB9600D00F99BF9 /* AlertUtils.swift */,
 				9BB3F7431CC60B6F00C2DD05 /* Error.swift */,
+				5649FE1922B3F912006B6862 /* IPLocation.swift */,
 				B87A04391D193ABC001132F2 /* LoggerUtils.swift */,
 				B8319A091D1B975C001E50C2 /* RegexUtils.swift */,
 				B83D3E781D2BA689007655CE /* Event.swift */,
@@ -1568,9 +1648,12 @@
 		9B3247831CC0C9D600A3BAFF /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				56DC4E7522ACA5B1006B1975 /* Debug */,
 				56173BE1228C3AEB0085A625 /* About */,
 				9B17F8EA1C53379700679FCB /* SettingsViewController.swift */,
 				567D67BA2290737F0049BF6F /* SiriViewController.swift */,
+				566FB9DE22B781370026A957 /* HideVpnIconViewController.swift */,
+				56F9E55322B85F5000EE5DDB /* Settings.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -1620,6 +1703,7 @@
 				9B82853D1CE20DE40027D15C /* HMScanner.m */,
 				B829C1701D4395BC00C17B82 /* QRCodeScannerVC.h */,
 				B829C1711D4395BC00C17B82 /* QRCodeScannerVC.m */,
+				5688A175229ADB520099A130 /* QRCodeViewController.swift */,
 			);
 			path = QRCode;
 			sourceTree = "<group>";
@@ -1627,15 +1711,14 @@
 		9B8705FB1C1D788F00651424 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
-				3A104BC52073C4DF00C848D5 /* mbedtls.xcodeproj */,
-				3A104BBC2073C4CD00C848D5 /* libuv.xcodeproj */,
-				3A104BB32073C4AB00C848D5 /* libsodium.xcodeproj */,
-				3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */,
+				56EF0B2222CB2CD9001EF1F6 /* libsodium.xcodeproj */,
+				56EF0B1C22CB2CC7001EF1F6 /* pcre.xcodeproj */,
+				56EF0B1622CB2CB7001EF1F6 /* mbedtls.xcodeproj */,
+				56EF0B1022CB2C3B001EF1F6 /* c-ares.xcodeproj */,
+				56EF0B0622CB2C29001EF1F6 /* ssLocal.xcodeproj */,
 				1ECA21631E05EA6D00B32187 /* PacketTunnel.entitlements */,
 				9B8705FE1C1D788F00651424 /* PacketTunnelProvider.h */,
 				9B8705FF1C1D788F00651424 /* PacketTunnelProvider.m */,
-				3A104BDE2073C6D900C848D5 /* Profile.h */,
-				3A104BDF2073C6D900C848D5 /* Profile.m */,
 				9B2D8C891C7C3F5B00CC65B3 /* ProxyManager.h */,
 				9B2D8C8A1C7C3F5B00CC65B3 /* ProxyManager.m */,
 				9B8706091C1DBCCD00651424 /* dns.h */,
@@ -1695,6 +1778,7 @@
 				9BB3F73B1CC3D3DE00C2DD05 /* RecentRequestsCell.swift */,
 				9B8750541CC761D000A11715 /* RequestModel.swift */,
 				9BF303451CC8A1F60096588E /* LogDetailViewController.swift */,
+				56B2DCDF22BB062600B6CC12 /* HttpRequestVC.swift */,
 			);
 			name = Dashboard;
 			sourceTree = "<group>";
@@ -1723,6 +1807,7 @@
 		9BC6FFEB1CB28B4B00E5EA61 /* ShadowCoelModel */ = {
 			isa = PBXGroup;
 			children = (
+				566FB9C722B721800026A957 /* Country.swift */,
 				9BC6FFEC1CB28B4B00E5EA61 /* ShadowCoelModel.h */,
 				9BC215BA1CB4DAE6002AADD1 /* BaseModel.swift */,
 				9BC215B81CB4DA9E002AADD1 /* Proxy.swift */,
@@ -1758,6 +1843,8 @@
 				B803A6971D02B768003EA9AA /* API.swift */,
 				B821B0F41D5335DA0061E7B9 /* FeedbackManager.swift */,
 				B8F7AE3D1D5F178A005CA41E /* CloudSetManager.swift */,
+				562D6EBB22ADE4EC008317C4 /* ColorManager.swift */,
+				56D01C0222A7960C00C2A202 /* SubscribeManager.swift */,
 				B8B1E4A51D6584DC003F8530 /* User.swift */,
 			);
 			path = Core;
@@ -2452,6 +2539,7 @@
 				B87B98091D3B64BE00FA66BF /* RequestEventRow.swift */,
 				B8367A801D1B6D5400D50C25 /* BaseButtonRow.swift */,
 				B821B0F21D5334D50061E7B9 /* ActionRow.swift */,
+				560C48E2229EA56A00363625 /* SubscribeRow.swift */,
 			);
 			name = Row;
 			sourceTree = "<group>";
@@ -2488,6 +2576,11 @@
 		C8B2149E8757C44C469576D2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				563AAF9122A0FB330068D02D /* ICSMainFramework.framework */,
+				56C1844C22A0F80A00F6921A /* Alamofire.framework */,
+				568D877122A0F70500802630 /* Alamofire.framework */,
+				56CD431C229D509B00C0B06A /* EFQRCode.framework */,
+				5646718A229D4F610072A8FB /* EFQRCode.framework */,
 				5658EA15229CC346001E6A31 /* FlagKit.framework */,
 				56B8FA5A228D1D250087DA7C /* CloudKit.framework */,
 				3AF6B04A2084B04900A4AA06 /* CocoaLumberjack.framework */,
@@ -2585,7 +2678,6 @@
 				9BC600231CB2921C00E5EA61 /* PBXTargetDependency */,
 				9B8193BD1CBCFEE700BE320D /* PBXTargetDependency */,
 				3A57D265207290AC000520F8 /* PBXTargetDependency */,
-				3A657509207C4D790030BDE0 /* PBXTargetDependency */,
 			);
 			name = ShadowCoel;
 			productName = ShadowCoel;
@@ -2618,13 +2710,14 @@
 				1E8E38665E96A05334712A3F /* [CP] Check Pods Manifest.lock */,
 				9B8705F61C1D788F00651424 /* Sources */,
 				9B8705F71C1D788F00651424 /* Frameworks */,
-				9B8705F81C1D788F00651424 /* Resources */,
 				9BC858AF1C34C5AA00992032 /* Framework Hack */,
+				9B8705F81C1D788F00651424 /* Resources */,
+				56F5E84822C38C950073CA40 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				3A65750B207C4DC00030BDE0 /* PBXTargetDependency */,
+				56EF0B2922CB35AE001EF1F6 /* PBXTargetDependency */,
 				3A739BCA20761B850069F21C /* PBXTargetDependency */,
 				3A8AC9222075442A002843E0 /* PBXTargetDependency */,
 				3ADE7CFF2073732E000F70AA /* PBXTargetDependency */,
@@ -2822,6 +2915,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				Base,
 				"zh-Hans",
 			);
@@ -2829,6 +2923,10 @@
 			productRefGroup = 9B0CFA0C1C1C0B1B007BD7C6 /* Products */;
 			projectDirPath = "";
 			projectReferences = (
+				{
+					ProductGroup = 56EF0B1122CB2C3B001EF1F6 /* Products */;
+					ProjectRef = 56EF0B1022CB2C3B001EF1F6 /* c-ares.xcodeproj */;
+				},
 				{
 					ProductGroup = 3A262D47207A850200073C87 /* Products */;
 					ProjectRef = 3A262D46207A850200073C87 /* CallbackURLKit.xcodeproj */;
@@ -2846,28 +2944,28 @@
 					ProjectRef = 3A8780A6207549F800B96BF3 /* KissXML.xcodeproj */;
 				},
 				{
-					ProductGroup = 3A104BB42073C4AB00C848D5 /* Products */;
-					ProjectRef = 3A104BB32073C4AB00C848D5 /* libsodium.xcodeproj */;
+					ProductGroup = 56EF0B2322CB2CD9001EF1F6 /* Products */;
+					ProjectRef = 56EF0B2222CB2CD9001EF1F6 /* libsodium.xcodeproj */;
 				},
 				{
-					ProductGroup = 3A104BBD2073C4CD00C848D5 /* Products */;
-					ProjectRef = 3A104BBC2073C4CD00C848D5 /* libuv.xcodeproj */;
-				},
-				{
-					ProductGroup = 3A104BC62073C4DF00C848D5 /* Products */;
-					ProjectRef = 3A104BC52073C4DF00C848D5 /* mbedtls.xcodeproj */;
+					ProductGroup = 56EF0B1722CB2CB7001EF1F6 /* Products */;
+					ProjectRef = 56EF0B1622CB2CB7001EF1F6 /* mbedtls.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A8AC90820754396002843E0 /* Products */;
 					ProjectRef = 3A8AC90720754396002843E0 /* MMWormhole.xcodeproj */;
 				},
 				{
+					ProductGroup = 56EF0B1D22CB2CC7001EF1F6 /* Products */;
+					ProjectRef = 56EF0B1C22CB2CC7001EF1F6 /* pcre.xcodeproj */;
+				},
+				{
 					ProductGroup = B86B08E41D17F84900613014 /* Products */;
 					ProjectRef = B86B08E31D17F84900613014 /* ShadowPath.xcodeproj */;
 				},
 				{
-					ProductGroup = 3A6574FE207C4CAF0030BDE0 /* Products */;
-					ProjectRef = 3A6574FD207C4CAF0030BDE0 /* ssrLocal.xcodeproj */;
+					ProductGroup = 56EF0B0722CB2C29001EF1F6 /* Products */;
+					ProjectRef = 56EF0B0622CB2C29001EF1F6 /* ssLocal.xcodeproj */;
 				},
 				{
 					ProductGroup = 3A6DD4F3207366BF00BDF530 /* Products */;
@@ -2888,48 +2986,6 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		3A104BB92073C4AB00C848D5 /* libsodium.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = libsodium.framework;
-			remoteRef = 3A104BB82073C4AB00C848D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A104BBB2073C4AB00C848D5 /* libsodium.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = libsodium.framework;
-			remoteRef = 3A104BBA2073C4AB00C848D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A104BC22073C4CD00C848D5 /* libuv.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = libuv.framework;
-			remoteRef = 3A104BC12073C4CD00C848D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A104BC42073C4CD00C848D5 /* libuv.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = libuv.framework;
-			remoteRef = 3A104BC32073C4CD00C848D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A104BCB2073C4DF00C848D5 /* mbedtls.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = mbedtls.framework;
-			remoteRef = 3A104BCA2073C4DF00C848D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A104BCD2073C4DF00C848D5 /* mbedtls.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = mbedtls.framework;
-			remoteRef = 3A104BCC2073C4DF00C848D5 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		3A262D4D207A850300073C87 /* CallbackURLKit.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -2963,20 +3019,6 @@
 			fileType = wrapper.cfbundle;
 			path = EurekaTests.xctest;
 			remoteRef = 3A57D26020728FFF000520F8 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A657503207C4CAF0030BDE0 /* ssrLocal.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ssrLocal.framework;
-			remoteRef = 3A657502207C4CAF0030BDE0 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		3A657505207C4CAF0030BDE0 /* ssrLocal.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = ssrLocal.framework;
-			remoteRef = 3A657504207C4CAF0030BDE0 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		3A8780B1207549F800B96BF3 /* KissXML.framework */ = {
@@ -3056,6 +3098,41 @@
 			remoteRef = 3ADE7CF72073729B000F70AA /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		56EF0B0F22CB2C2A001EF1F6 /* ssLocal.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = ssLocal.framework;
+			remoteRef = 56EF0B0E22CB2C2A001EF1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		56EF0B1522CB2C3B001EF1F6 /* c_ares.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = c_ares.framework;
+			remoteRef = 56EF0B1422CB2C3B001EF1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		56EF0B1B22CB2CB7001EF1F6 /* mbedtls.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = mbedtls.framework;
+			remoteRef = 56EF0B1A22CB2CB7001EF1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		56EF0B2122CB2CC7001EF1F6 /* libpcre.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libpcre.a;
+			remoteRef = 56EF0B2022CB2CC7001EF1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		56EF0B2722CB2CD9001EF1F6 /* libsodium.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = libsodium.framework;
+			remoteRef = 56EF0B2622CB2CD9001EF1F6 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		B86B08E91D17F84900613014 /* ShadowPath.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
@@ -3077,16 +3154,30 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5606B7C522B4CBEC00FA3BAC /* ShadowCoel-BluePurple@3x.png in Resources */,
 				5658EA4C229CDE4B001E6A31 /* FlagKit.xcassets in Resources */,
+				56B2DD3A22BBB35900B6CC12 /* TikTok@3x.png in Resources */,
+				56B2DD3622BBAAE500B6CC12 /* KuaiShou@3x.png in Resources */,
+				56C8E6D522B13BF600996143 /* ShadowCoel-Water@3x.png in Resources */,
+				56B2DD3822BBB28700B6CC12 /* TikTok@2x.png in Resources */,
+				56C8E6DA22B13FF200996143 /* ShadowCoel-Gold@3x.png in Resources */,
 				9B1F745E1C2F83AD0028C1A6 /* config.plist in Resources */,
 				56CA29BA228CDC9700E46123 /* Pods-TodayWidget-acknowledgements.plist in Resources */,
 				9B0CFA191C1C0B1B007BD7C6 /* LaunchScreen.storyboard in Resources */,
 				B8319A0D1D1BD696001E50C2 /* Localizable.strings in Resources */,
+				560F9A9A22BC61C000511397 /* TieLu12306@2x.png in Resources */,
 				1EF602951F113A660005E0C7 /* GeoLite2-Country.mmdb in Resources */,
+				56B2DD3E22BBC7AD00B6CC12 /* JinRiTouTiao@3x.jpg in Resources */,
 				9B8285471CE20DE40027D15C /* HMScanner.bundle in Resources */,
 				9B0CFA161C1C0B1B007BD7C6 /* Assets.xcassets in Resources */,
+				5606B7C422B4CBEC00FA3BAC /* ShadowCoel-BluePurple@2x.png in Resources */,
+				56C8E6D722B13C4D00996143 /* ShadowCoel-Water@2x.png in Resources */,
+				56C8E6DB22B13FF200996143 /* ShadowCoel-Gold@2x.png in Resources */,
+				56B2DD3422BBAA9900B6CC12 /* KuaiShou@2x.png in Resources */,
 				56CA29B9228CDC9700E46123 /* Pods-ShadowCoel-acknowledgements.plist in Resources */,
 				56CA29BB228CDC9700E46123 /* Pods-PacketTunnel-acknowledgements.plist in Resources */,
+				560F9A9B22BC61C000511397 /* TieLu12306@3x.png in Resources */,
+				56B2DD3C22BBC5B600B6CC12 /* JinRiTouTiao@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -3305,27 +3396,28 @@
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AcknowList/AcknowList.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Appirater/Appirater.framework",
 				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
 				"${BUILT_PRODUCTS_DIR}/AsyncSwift/Async.framework",
 				"${BUILT_PRODUCTS_DIR}/Cartography/Cartography.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack.default-Swift/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/EFQRCode/EFQRCode.framework",
 				"${BUILT_PRODUCTS_DIR}/ICDMaterialActivityIndicatorView/ICDMaterialActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ICSMainFramework/ICSMainFramework.framework",
 				"${BUILT_PRODUCTS_DIR}/ICSPullToRefresh/ICSPullToRefresh.framework",
 				"${BUILT_PRODUCTS_DIR}/ISO8601DateFormatter/ISO8601DateFormatter.framework",
 				"${BUILT_PRODUCTS_DIR}/KeychainAccess/KeychainAccess.framework",
-				"${BUILT_PRODUCTS_DIR}/LogglyLogger-CocoaLumberjack/LogglyLogger_CocoaLumberjack.framework",
 				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MMDB-Swift/MMDB_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/PSOperations/PSOperations.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftColor/SwiftColor.framework",
-				"${BUILT_PRODUCTS_DIR}/CocoaLumberjack-Default-Swift/CocoaLumberjack.framework",
+				"${BUILT_PRODUCTS_DIR}/swift_qrcodejs/swift_qrcodejs.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -3336,22 +3428,24 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Async.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cartography.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CocoaLumberjack.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFQRCode.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICDMaterialActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICSMainFramework.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ICSPullToRefresh.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ISO8601DateFormatter.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KeychainAccess.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LogglyLogger_CocoaLumberjack.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MMDB_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PSOperations.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swift_qrcodejs.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -3361,9 +3455,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				56F9E55422B85F5000EE5DDB /* Settings.swift in Sources */,
 				B8F7AE3E1D5F178A005CA41E /* CloudSetManager.swift in Sources */,
 				B821B0F31D5334D50061E7B9 /* ActionRow.swift in Sources */,
 				B8D8CC111D50D5CD00CE6C0D /* SyncManager.swift in Sources */,
+				565B6C9522B8842B0048C02C /* Diagnostics.swift in Sources */,
+				56963F5822AD20C600AB3126 /* IconViewController.swift in Sources */,
 				B83AA5701D38E6F7007905B4 /* RequestDetailVC.swift in Sources */,
 				B8C0FE151D5E0A9400737454 /* PushLocalChangesOperation.swift in Sources */,
 				B83D3E7D1D2BA8C8007655CE /* Receipt.swift in Sources */,
@@ -3383,6 +3480,7 @@
 				9B32478A1CC0F1D200A3BAFF /* Importer.swift in Sources */,
 				9B1F74621C2F85540028C1A6 /* UIManager.swift in Sources */,
 				B8B1E4A61D6584DC003F8530 /* User.swift in Sources */,
+				5649FE1A22B3F912006B6862 /* IPLocation.swift in Sources */,
 				B8C256B01D1A957A0074D3B1 /* HomePresenter.swift in Sources */,
 				9B1F74601C2F84250028C1A6 /* AppInitializer.swift in Sources */,
 				9B54CC441C1C266C00DDEEBB /* UIViewControllerExtensions.swift in Sources */,
@@ -3393,13 +3491,17 @@
 				9BD4CACA1CB9600D00F99BF9 /* AlertUtils.swift in Sources */,
 				B829C1721D4395BC00C17B82 /* QRCodeScannerVC.m in Sources */,
 				B87B98041D3B423B00FA66BF /* PaddingLabel.swift in Sources */,
+				566FB9DF22B781370026A957 /* HideVpnIconViewController.swift in Sources */,
 				B8CCC6E51CFDCFD8000E7E2E /* RuleSetCell.swift in Sources */,
+				560C48E3229EA56A00363625 /* SubscribeRow.swift in Sources */,
+				56DC4E8A22ACB227006B1975 /* ColorViewController.swift in Sources */,
 				B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */,
 				B8A09D7F1D51B9A900A9A989 /* PushLocalChangesBaseOperation.swift in Sources */,
 				9BC858A51C33D30100992032 /* BaseSafariViewController.swift in Sources */,
 				B84551421CF878BD005779CD /* ConfigGroupChooseVC.swift in Sources */,
 				B88096B01D0579F5008BEB87 /* CloudDetailViewController.swift in Sources */,
 				B8319A0A1D1B975C001E50C2 /* RegexUtils.swift in Sources */,
+				56D01C0322A7960C00C2A202 /* SubscribeManager.swift in Sources */,
 				B84551401CF83D07005779CD /* HomeVC.swift in Sources */,
 				B8D8CC131D50D5DB00CE6C0D /* ICloudSyncService.swift in Sources */,
 				5688A17C229BD2DF0099A130 /* SubscriptionConfigurationViewController.swift in Sources */,
@@ -3420,6 +3522,7 @@
 				9B5E13BA1C897870007DFE0A /* ProxyConfigurationViewController.swift in Sources */,
 				56B1E771228C43BE0000703E /* SubscriptionListViewController.swift in Sources */,
 				B8367A811D1B6D5400D50C25 /* BaseButtonRow.swift in Sources */,
+				562D6EBC22ADE4EC008317C4 /* ColorManager.swift in Sources */,
 				B87B980A1D3B64BE00FA66BF /* RequestEventRow.swift in Sources */,
 				B83D3E791D2BA689007655CE /* Event.swift in Sources */,
 				9B17F8EB1C53379700679FCB /* SettingsViewController.swift in Sources */,
@@ -3433,10 +3536,14 @@
 				9BB3F74F1CC6308000C2DD05 /* RecentRequestsVC.swift in Sources */,
 				B821B0F71D539CFD0061E7B9 /* SyncVC.swift in Sources */,
 				9B8285481CE20DE40027D15C /* HMScanner.m in Sources */,
+				56DC4E8822ACA61E006B1975 /* DebugViewController.swift in Sources */,
 				B8A09D7C1D51B9A900A9A989 /* FetchCloudChangesOperation.swift in Sources */,
 				B896A8401D548AAC009E4BF5 /* ICloudSetupOperation.swift in Sources */,
+				5618FBF222B92A82003A37F5 /* Network.m in Sources */,
+				56963F6B22AD35AD00AB3126 /* UIColorExtension.swift in Sources */,
 				B8A09D691D51B42B00A9A989 /* CloudKitRecord.swift in Sources */,
 				9BB3F7441CC60B6F00C2DD05 /* Error.swift in Sources */,
+				56B2DCE022BB062600B6CC12 /* HttpRequestVC.swift in Sources */,
 				9B76EEAD1C9005D2002BF5D1 /* RuleConfigurationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3455,7 +3562,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				B8EAC5941D40BF310046963C /* TunnelError.m in Sources */,
-				3A104BE02073C6DA00C848D5 /* Profile.m in Sources */,
 				9B2D8C8B1C7C3F5B00CC65B3 /* ProxyManager.m in Sources */,
 				9B8706001C1D788F00651424 /* PacketTunnelProvider.m in Sources */,
 				9B87060B1C1DBCCD00651424 /* dns.m in Sources */,
@@ -3492,6 +3598,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9BC215BB1CB4DAE6002AADD1 /* BaseModel.swift in Sources */,
+				566FB9D922B721800026A957 /* Country.swift in Sources */,
 				567D67BE22929C1E0049BF6F /* Subscribe.swift in Sources */,
 				9BC215BF1CB4E06C002AADD1 /* RuleSet.swift in Sources */,
 				9BC215B91CB4DA9E002AADD1 /* Proxy.swift in Sources */,
@@ -3583,16 +3690,6 @@
 			name = Eureka;
 			targetProxy = 3A57D264207290AC000520F8 /* PBXContainerItemProxy */;
 		};
-		3A657509207C4D790030BDE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ssrLocal iOS";
-			targetProxy = 3A657508207C4D790030BDE0 /* PBXContainerItemProxy */;
-		};
-		3A65750B207C4DC00030BDE0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = "ssrLocal iOS";
-			targetProxy = 3A65750A207C4DC00030BDE0 /* PBXContainerItemProxy */;
-		};
 		3A739BCA20761B850069F21C /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ShadowPath;
@@ -3642,6 +3739,11 @@
 			isa = PBXTargetDependency;
 			name = "yaml iOS";
 			targetProxy = 3ADE7D0120737353000F70AA /* PBXContainerItemProxy */;
+		};
+		56EF0B2922CB35AE001EF1F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = ssLocal;
+			targetProxy = 56EF0B2822CB35AE001EF1F6 /* PBXContainerItemProxy */;
 		};
 		9B8193BD1CBCFEE700BE320D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -3829,6 +3931,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GLDWGL4C7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3876,6 +3979,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7GLDWGL4C7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -3917,6 +4021,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEVELOPMENT_TEAM = 7GLDWGL4C7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
@@ -3942,6 +4047,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7GLDWGL4C7;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TodayWidget/Info.plist;
@@ -3960,11 +4066,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 62905CBD94865A9DB7C6AADC /* Pods-PacketTunnel.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = 7GLDWGL4C7;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -3992,6 +4098,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Antinat/expat-lib/lib",
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ssrLocal/libev/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -4006,11 +4113,11 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2AE5B01A5E9CF50CB9760E6E /* Pods-PacketTunnel.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 6;
 				DEVELOPMENT_TEAM = 7GLDWGL4C7;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4037,6 +4144,7 @@
 					"$(PROJECT_DIR)/PacketTunnel/Antinat/expat-lib/lib",
 					"$(PROJECT_DIR)/PacketTunnel/Shadowsocks/libsodium-ios/lib",
 					"$(PROJECT_DIR)/PacketTunnel",
+					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ssrLocal/libev/lib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -66,6 +66,7 @@ enum URLAction: String {
     case DISCONNECT = "disconnect" // 关闭
     case CLOSE = "close" // 关闭
     case TOGGLE = "toggle" // 切换
+    case ADD = "add"
     case XCALLBACK = "x-callback-url"
     
     func perform(_ url: URL?, parameters: Parameters, completion: ((Error?) -> Void)? = nil) -> Bool {
@@ -92,6 +93,8 @@ enum URLAction: String {
             if let url = url {
                 return callbackURLKit_Manager.shared.handleOpen(url: url)
             }
+        case .ADD:
+            let _ = 123
         }
         return true
     }

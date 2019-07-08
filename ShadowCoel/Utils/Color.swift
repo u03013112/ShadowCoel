@@ -10,26 +10,40 @@ import SwiftColor
 
 struct Color {
     
-    static let Brand = Color.Black
-    static let Action = "007AFF".color
-    static let Black = "333333".color
-    static let Gray = "8E8E93".color
-    static let Separator = "E0E0E0".color
-    static let Background = "F9F9F9".color
-    static let NavigationBackground = "FFFFFF".color
-    static let TabBackground = "FFFFFF".color
+    static var Brand = Color.Black
+    static var Action = "007AFF".color
+    static var Black = "333333".color
+    static var Gray = "8E8E93".color
+    static var Separator = "E0E0E0".color
+    static var Background = "F9F9F9".color
+    
+    // Navigation
+    static var NavigationBackground = "FFFFFF".color
+    static var NavigationText = "333333".color
 
     // Tab Bar
-    static let TabItemSelected = "000".color
-    static let TabItemUnselected = "D7D7D7".color
-
-    static let StatusOn = "FF5E3B".color
-    static let StatusOff = "1E96E2".color
-    static let StatusConnecting = "F5A623".color
+    static var TabBackground = "FFFFFF".color
+    static var TabItemSelected = "000".color
+    static var TabItemUnselected = "D7D7D7".color
     
-    static let TextMost = Color.Black
-    static let TextPrimary = "404040".color
-    static let TextSecond = "555555".color
-    static let TextHint = "C8C8C8".color
+    // Connect Button
+    static var StatusOn = "FF5E3B".color
+    static var StatusOff = "1E96E2".color
+    static var StatusConnecting = "F5A623".color
+    
+    // Button Icon
+    static var ButtonIcon = "333333".color
+    
+    // Ping
+    static var PingSuccessText = "45995E".color
+    static var PingTimeoutText = "CF5747".color
+    
+    // Default
+    static var DefaultDot = "FF6400".color
+    
+    static var TextMost = Color.Black
+    static var TextPrimary = "404040".color
+    static var TextSecond = "555555".color
+    static var TextHint = "C8C8C8".color
     
 }

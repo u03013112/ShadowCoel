@@ -15,7 +15,7 @@ typealias waDateFormatter = ISO8601DateFormatter
 struct API {
 
     // Use your own API
-    static let URL = "http:/1.1.1.1:8000/"
+    static let URL = "http://127.0.0.1:8000/"
     
     enum Path {
         case ruleSets

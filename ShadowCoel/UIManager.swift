@@ -17,12 +17,13 @@ class UIManager: NSObject, AppLifeCycleProtocol {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // 我喜欢蓝色QWQ
-        // UIView.appearance().tintColor = Color.Brand
-
+        
+        UIView.appearance().tintColor = Color.Brand
+        
         UITableView.appearance().backgroundColor = Color.Background
         UITableView.appearance().separatorColor = Color.Separator
-
+        
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor :Color.NavigationText]
         UINavigationBar.appearance().isTranslucent = false
         UINavigationBar.appearance().barTintColor = Color.NavigationBackground
 
@@ -31,7 +32,7 @@ class UIManager: NSObject, AppLifeCycleProtocol {
         UITabBar.appearance().tintColor = Color.TabItemSelected
 
         keyWindow?.rootViewController = makeRootViewController()
-
+        
         Receipt.shared.validate()
         return true
     }
@@ -40,6 +41,8 @@ class UIManager: NSObject, AppLifeCycleProtocol {
         let tabBarVC = UITabBarController()
         tabBarVC.viewControllers = makeChildViewControllers()
         tabBarVC.selectedIndex = 0
+        tabBarVC.tabBar.isTranslucent = false
+        tabBarVC.tabBar.barTintColor = Color.TabBackground
         return tabBarVC
     }
     
@@ -47,8 +50,27 @@ class UIManager: NSObject, AppLifeCycleProtocol {
         let cons: [(UIViewController.Type, String, String)] = [(HomeVC.self, "Home".localized(), "Home"), (DashboardVC.self, "Statistics".localized(), "Dashboard"), (CollectionViewController.self, "Manage".localized(), "Config"), (SettingsViewController.self, "More".localized(), "More")]
         return cons.map {
             let vc = UINavigationController(rootViewController: $0.init())
-            vc.tabBarItem = UITabBarItem(title: $1, image: $2.originalImage, selectedImage: $2.templateImage)
+            vc.tabBarItem = UITabBarItem(title: $1, image: $2.originalImage, selectedImage: $2.templateImage)   
             return vc
+        }
+    }
+    
+    func setColor() {
+        UIView.appearance().tintColor = Color.Brand
+        UITableView.appearance().backgroundColor = Color.Background
+        UITableView.appearance().separatorColor = Color.Separator
+        UINavigationBar.appearance().barTintColor = Color.NavigationBackground
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor :Color.NavigationText]
+        UITabBar.appearance().tintColor = Color.TabItemSelected
+    }
+    
+    func reloadAll() {
+        setColor()
+        if let window = keyWindow {
+            window.subviews.forEach({ (view: UIView) in
+                view.removeFromSuperview()
+                window.addSubview(view)
+            })
         }
     }
     

@@ -17,6 +17,9 @@ struct Importer {
     init(vc: UIViewController) {
         self.viewController = vc
     }
+    private func presentViewController(alert: UIAlertController, animated flag: Bool, completion: (() -> Void)?) -> Void {
+        UIApplication.shared.keyWindow?.rootViewController?.present(alert, animated: flag, completion: completion)
+    }
     
     func importConfigFromUrl() {
         var urlTextField: UITextField?
@@ -50,7 +53,9 @@ struct Importer {
     func onImportInput(_ result: String) {
         if Proxy.uriIsShadowsocks(result) {
             importSS(result)
-        }else {
+        } else if Subscribe.uriIsSubscribe(result) {
+            let _ = 13
+        } else {
             importConfig(result, isURL: true)
         }
     }
@@ -58,6 +63,7 @@ struct Importer {
     func importSS(_ source: String) {
         do {
             let defaultName = "___scanresult"
+            let IPLO = IPLocation()
             let proxy = try Proxy(dictionary: ["name": defaultName as AnyObject, "uri": source as AnyObject], inRealm: defaultRealm)
             var urlTextField: UITextField?
             let alert = UIAlertController(title: "Add a new proxy".localized(), message: "Please set name for the new proxy".localized(), preferredStyle: .alert)
@@ -74,6 +80,7 @@ struct Importer {
                     return
                 }
                 proxy.name = text
+                proxy.country = IPLO.IP2CountryCode(IP: proxy.host) // 自动判断国家
                 do {
                     try proxy.validate(inRealm: defaultRealm)
                     try DBUtils.add(proxy)
@@ -84,6 +91,7 @@ struct Importer {
                 })
             alert.addAction(UIAlertAction(title: "CANCEL".localized(), style: .cancel) { action in
                 })
+            viewController?.dismiss(animated: false, completion: nil) // 修复从相册导入时无法弹出提示框的Bug
             viewController?.present(alert, animated: true, completion: nil)
         }catch {
             self.onConfigSaveCallback(false, error: error)
@@ -93,6 +101,11 @@ struct Importer {
         }
     }
     
+    func importSubscribe(_ source:String) {
+        do {
+            let defaultName = "___scanresult"
+        }
+    }
     func importConfig(_ source: String, isURL: Bool) {
         viewController?.showProgreeHUD("Importing Config...".localized())
         Async.background(after: 1) {

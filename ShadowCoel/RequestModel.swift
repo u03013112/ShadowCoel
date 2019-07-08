@@ -271,6 +271,7 @@ class Request {
     
     var events: [RequestEvent] = []
     var url: String
+    var path: String
     var method: HTTPMethod = .GET
     var ip: String?
     var rule: String?
@@ -282,11 +283,12 @@ class Request {
     var forwardStage: ForwardStage = .none
     
     init?(dict: [String: AnyObject]) {
-        guard let url = dict["url"] as? String, let m = dict["method"] as? String, let method = HTTPMethod(rawValue: m) else {
+        guard let url = dict["url"] as? String, let m = dict["method"] as? String, let path = dict["path"] as? String, let method = HTTPMethod(rawValue: m) else {
             return nil
         }
 
         self.url = url
+        self.path = path
         self.method = method
         if let v = dict["version"] as? String {
             self.version = v

@@ -7,7 +7,7 @@
 		<key>PacketProcessor.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>42</integer>
+			<integer>43</integer>
 		</dict>
 		<key>PacketTunnel.xcscheme_^#shared#^_</key>
 		<dict>
@@ -37,17 +37,17 @@
 		<key>ShadowCoelBase.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>44</integer>
+			<integer>45</integer>
 		</dict>
 		<key>ShadowCoelLibrary.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>41</integer>
+			<integer>42</integer>
 		</dict>
 		<key>ShadowCoelModel.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>orderHint</key>
-			<integer>43</integer>
+			<integer>44</integer>
 		</dict>
 		<key>TodayWidget.xcscheme_^#shared#^_</key>
 		<dict>

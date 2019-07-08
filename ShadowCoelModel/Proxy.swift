@@ -56,6 +56,8 @@ public enum ProxyError: Error {
 
 open class Proxy: BaseModel {
     @objc open dynamic var typeRaw = ProxyType.Shadowsocks.rawValue
+    @objc open dynamic var group: String? // 服务器分组
+    @objc open dynamic var country: String? = "WW" // 服务器国家
     @objc open dynamic var name = "" // 服务器名称
     @objc open dynamic var host = "" // 服务器地址
     @objc open dynamic var port = 0 // 端口
@@ -174,18 +176,27 @@ open class Proxy: BaseModel {
         "aes-128-cfb",
         "aes-192-cfb",
         "aes-256-cfb",
+        "aes-128-ctr",
+        "aes-192-ctr",
+        "aes-256-ctr",
+        "aes-128-gcm",
+        "aes-192-gcm",
+        "aes-256-gcm",
         "bf-cfb",
         "camellia-128-cfb",
         "camellia-192-cfb",
         "camellia-256-cfb",
-        "cast5-cfb",
-        "des-cfb",
-        "idea-cfb",
-        "rc2-cfb",
-        "seed-cfb",
+        /* mbedtls不支持 */
+        // "cast5-cfb",
+        // "des-cfb",
+        // "idea-cfb",
+        // "rc2-cfb",
+        // "seed-cfb",
         "salsa20",
         "chacha20",
-        "chacha20-ietf"
+        "chacha20-ietf",
+        "chacha20-ietf-poly1305",
+        "xchacha20-ietf-poly1305"
 ]
 }
 
@@ -220,7 +231,8 @@ extension Proxy {
                 let password = password,
                 let ssrObfsParam = ssrObfsParam,
                 let ssrProtocolParam = ssrProtocolParam,
-                let name = Optional(name)
+                let name = Optional(name),
+                let group = group
             {
                 let password_base64 = password.data(using: .ascii)?.base64EncodedString()
                 let password_base64_1 = password_base64!.replacingOccurrences(of: "=", with: "")
@@ -231,11 +243,14 @@ extension Proxy {
                 let ssrProtocolParam_base64 = ssrProtocolParam.data(using: .ascii)?.base64EncodedString()
                 let ssrProtocolParam_base64_1 = ssrProtocolParam_base64!.replacingOccurrences(of: "=", with: "")
                 let ssrProtocolParam_base64_2 = ssrProtocolParam_base64_1.replacingOccurrences(of: "/", with: "_")
-                let name_base64 = name.data(using: .ascii)?.base64EncodedString()
+                let name_base64 = name.data(using: .utf8)?.base64EncodedString()
                 let name_base64_1 = name_base64!.replacingOccurrences(of: "=", with: "")
                 let name_base64_2 = name_base64_1.replacingOccurrences(of: "/", with: "_")
-                let param_base64 = "obfsparam=\(ssrObfsParam_base64_2)&protoparam=\(ssrProtocolParam_base64_2)&remarks=\(name_base64_2)"
-                var ssr = "\(host):\(port):\(ssrProtocol):\(authscheme):\(ssrObfs):\(password_base64_2)/?\(param_base64)".data(using: .ascii)?.base64EncodedString()
+                let group_base64 = group.data(using: .utf8)?.base64EncodedString()
+                let group_base64_1 = group_base64!.replacingOccurrences(of: "=", with: "")
+                let group_base64_2 = group_base64_1.replacingOccurrences(of: "/", with: "_")
+                let param_base64 = "obfsparam=\(ssrObfsParam_base64_2)&protoparam=\(ssrProtocolParam_base64_2)&remarks=\(name_base64_2)&group=\(group_base64_2)"
+                let ssr = "\(host):\(port):\(ssrProtocol):\(authscheme):\(ssrObfs):\(password_base64_2)/?\(param_base64)".data(using: .ascii)?.base64EncodedString()
                 let ssr_1 = ssr!.replacingOccurrences(of: "=", with: "")
                 let ssr_2 = ssr_1.replacingOccurrences(of: "/", with: "_")
                 return "ssr://" + ssr_2
@@ -328,6 +343,8 @@ extension Proxy {
                         self.ssrProtocolParam = base64DecodeIfNeeded(comps[1]) // ssr协议参数
                     case "remarks":
                         self.name = base64DecodeIfNeeded(comps[1])! // ssr备注
+                    case "group":
+                        self.group = base64DecodeIfNeeded(comps[1]) // ssr群组
                     default:
                         continue
                     }
@@ -363,9 +380,11 @@ extension Proxy {
             self.name = name
             self.type = type
         }
+        /*
         if realm.objects(Proxy.self).filter("name = '\(name)'").first != nil {
             self.name = "\(name) \(Proxy.dateFormatter.string(from: Date()))"
         }
+        */
         try validate(inRealm: realm)
     }
     

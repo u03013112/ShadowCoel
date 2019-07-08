@@ -16,6 +16,7 @@ class DashboardVC: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Statistics".localized()
+        self.tabBarController?.tabBar.barTintColor = Color.TabBackground
     }
 
     override func viewWillAppear(_ animated: Bool) {
