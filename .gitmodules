@@ -1,0 +1,3 @@
+[submodule "Library/ssrNative"]
+	path = Library/ssrNative
+	url = https://github.com/ShadowsocksR-Live/shadowsocksr-native.git
