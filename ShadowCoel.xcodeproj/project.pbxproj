@@ -2818,7 +2818,7 @@
 				TargetAttributes = {
 					9B0CFA0A1C1C0B1A007BD7C6 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 7GLDWGL4C7;
+						DevelopmentTeam = 6YFU3ZSWW4;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2853,7 +2853,7 @@
 					};
 					9B8193B11CBCFEE700BE320D = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 7GLDWGL4C7;
+						DevelopmentTeam = 6YFU3ZSWW4;
 						LastSwiftMigration = 0930;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -2873,7 +2873,7 @@
 					};
 					9B8705F91C1D788F00651424 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 7GLDWGL4C7;
+						DevelopmentTeam = 6YFU3ZSWW4;
 						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -3933,7 +3933,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 7GLDWGL4C7;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3957,7 +3957,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @rpath/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Library/openssl/lib";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel;
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -3980,7 +3980,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 7GLDWGL4C7;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -3999,7 +3999,7 @@
 				INFOPLIST_FILE = "$(SRCROOT)/ShadowCoel/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @rpath/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(SRCROOT)/Library/openssl/lib";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel;
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4023,11 +4023,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 7GLDWGL4C7;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel.TodayWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4048,11 +4048,11 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 7GLDWGL4C7;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				INFOPLIST_FILE = TodayWidget/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel.TodayWidget;
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss.TodayWidget;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4072,7 +4072,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 7GLDWGL4C7;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -4100,7 +4100,7 @@
 					"$(PROJECT_DIR)/PacketTunnel",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ssrLocal/libev/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -4118,7 +4118,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 6;
-				DEVELOPMENT_TEAM = 7GLDWGL4C7;
+				DEVELOPMENT_TEAM = 6YFU3ZSWW4;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -4146,7 +4146,7 @@
 					"$(PROJECT_DIR)/PacketTunnel",
 					"$(PROJECT_DIR)$(LOCAL_LIBRARY_DIR)/ssrLocal/libev/lib",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.coelwu.shadowcoel.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = U0.ss.PacketTunnel;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
