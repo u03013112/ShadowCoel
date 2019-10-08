@@ -156,3 +156,7 @@
 "You must choose a proxy type" = "请选择代理类型";
 "You must choose a type" = "请选择类型";
 "You should manually refresh to see the request log." = "请手动刷新以查看请求日志.";
+"Simple" = "简单";
+"Login" = "登录";
+"Username" = "用户名";
+"Passwd" = "密码";

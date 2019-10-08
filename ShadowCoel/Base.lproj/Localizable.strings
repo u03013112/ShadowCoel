@@ -148,3 +148,7 @@
 "You must choose a proxy type" = "You must choose a proxy type";
 "You must choose a type" = "You must choose a type";
 "You should manually refresh to see the request log." = "You should manually refresh to see the request log.";
+"Simple" = "Simple";
+"Login" = "Login";
+"Username" = "Username";
+"Passwd" = "Passwd";

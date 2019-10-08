@@ -230,6 +230,8 @@
 		9BF303461CC8A1F60096588E /* LogDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF303451CC8A1F60096588E /* LogDetailViewController.swift */; };
 		9BF3034B1CCA1B060096588E /* BaseEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3034A1CCA1B060096588E /* BaseEmptyView.swift */; };
 		9BF3034D1CCA20D80096588E /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3034C1CCA20D80096588E /* Logging.swift */; };
+		A71496C5234CA38500689294 /* SimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71496C4234CA38500689294 /* SimpleVC.swift */; };
+		A71496C7234CA69100689294 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71496C6234CA69100689294 /* LoginVC.swift */; };
 		B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6951D0165EA003EA9AA /* CloudViewController.swift */; };
 		B803A6981D02B768003EA9AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6971D02B768003EA9AA /* API.swift */; };
 		B821B0F01D51DD8F0061E7B9 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B0EF1D51DD8F0061E7B9 /* KeychainUtils.swift */; };
@@ -1227,6 +1229,8 @@
 		A478ADBAAA1661B3FB51E4D3 /* Pods_PacketTunnel.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PacketTunnel.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A692B80DC5DB316AA1DED8CB /* Pods_TodayWidget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TodayWidget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6C3522CED51B0487ECEE41F /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
+		A71496C4234CA38500689294 /* SimpleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleVC.swift; sourceTree = "<group>"; };
+		A71496C6234CA69100689294 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		B3AEA49B98CE7A4AD5F03EE1 /* Pods-ShadowCoel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel.debug.xcconfig"; sourceTree = "<group>"; };
 		B803A6951D0165EA003EA9AA /* CloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
 		B803A6971D02B768003EA9AA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = API.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -1603,6 +1607,7 @@
 				9B2290FE1C8E5B9600EEC901 /* DataInitializer.swift */,
 				9B8193EC1CBE4DCA00BE320D /* UrlHandler.swift */,
 				9B1F74611C2F85540028C1A6 /* UIManager.swift */,
+				A71496B3234CA2E300689294 /* Simple */,
 				9B54CC431C1C266C00DDEEBB /* UIViewControllerExtensions.swift */,
 				9B5C00221CBFB315008DDE7A /* Home */,
 				9BB3F74D1CC6303700C2DD05 /* Dashboard */,
@@ -2512,6 +2517,15 @@
 				9BDA64211CAE25E0007F2581 /* UdpGwClient.h */,
 			);
 			path = udpgw_client;
+			sourceTree = "<group>";
+		};
+		A71496B3234CA2E300689294 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				A71496C4234CA38500689294 /* SimpleVC.swift */,
+				A71496C6234CA69100689294 /* LoginVC.swift */,
+			);
+			name = Simple;
 			sourceTree = "<group>";
 		};
 		B821B0F11D5318F80061E7B9 /* iCloud */ = {
@@ -3477,6 +3491,7 @@
 				9B8750551CC761D000A11715 /* RequestModel.swift in Sources */,
 				B87A043A1D193ABC001132F2 /* LoggerUtils.swift in Sources */,
 				B8CCC6EB1CFF1501000E7E2E /* ProxyRow.swift in Sources */,
+				A71496C7234CA69100689294 /* LoginVC.swift in Sources */,
 				9B32478A1CC0F1D200A3BAFF /* Importer.swift in Sources */,
 				9B1F74621C2F85540028C1A6 /* UIManager.swift in Sources */,
 				B8B1E4A61D6584DC003F8530 /* User.swift in Sources */,
@@ -3485,6 +3500,7 @@
 				9B1F74601C2F84250028C1A6 /* AppInitializer.swift in Sources */,
 				9B54CC441C1C266C00DDEEBB /* UIViewControllerExtensions.swift in Sources */,
 				9B0CFA0F1C1C0B1B007BD7C6 /* AppDelegate.swift in Sources */,
+				A71496C5234CA38500689294 /* SimpleVC.swift in Sources */,
 				B8A09D801D51B9A900A9A989 /* RealmCloud.swift in Sources */,
 				B8A09D7E1D51B9A900A9A989 /* PrepareZoneOperation.swift in Sources */,
 				9BB3F73C1CC3D3DE00C2DD05 /* RecentRequestsCell.swift in Sources */,
