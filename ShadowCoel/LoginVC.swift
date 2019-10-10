@@ -65,5 +65,28 @@ class LoginVC: FormViewController {
         let username = values[kFormUsername] as? String
         let passwd = values[kFormPasswd] as? String
         NSLog("%@ %@",username ?? "",passwd ?? "")
+        
+        var dict = [String:Any]()
+        dict["username"] = username
+        dict["passwd"] = passwd
+        let completion = {
+            (result:[String: Any]?, error:Error?) -> Void in
+            if let result = result {
+//                print("success: \(result)")
+                if (result["token"] as? String != nil) {
+                    SimpleManager.sharedManager.token = result["token"] as! String
+                    SimpleManager.sharedManager.username = username ?? ""
+                    self.close()
+                }else{
+                    //login failed!
+                    let alert = UIAlertController(title: "Login failed".localized(), message: nil, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "comfirm".localized(), style: .cancel, handler: nil))
+                    self.present(alert, animated: true, completion: nil)
+                }
+            } else if let error = error {
+                print("error: \(error.localizedDescription)")
+            }
+        }
+        HTTP.shared.postRequest(urlStr: "http://frp.u03013112.win:18021/v1/user/login", data: dict, completion: completion)
     }
 }

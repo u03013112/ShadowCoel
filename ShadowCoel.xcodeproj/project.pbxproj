@@ -232,6 +232,8 @@
 		9BF3034D1CCA20D80096588E /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3034C1CCA20D80096588E /* Logging.swift */; };
 		A71496C5234CA38500689294 /* SimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71496C4234CA38500689294 /* SimpleVC.swift */; };
 		A71496C7234CA69100689294 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71496C6234CA69100689294 /* LoginVC.swift */; };
+		A7CF7C2D234DD61300FA0502 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF7C2C234DD61300FA0502 /* HTTP.swift */; };
+		A7CF7C3E234DF91300FA0502 /* SimpleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */; };
 		B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6951D0165EA003EA9AA /* CloudViewController.swift */; };
 		B803A6981D02B768003EA9AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6971D02B768003EA9AA /* API.swift */; };
 		B821B0F01D51DD8F0061E7B9 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B0EF1D51DD8F0061E7B9 /* KeychainUtils.swift */; };
@@ -1231,6 +1233,8 @@
 		A6C3522CED51B0487ECEE41F /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		A71496C4234CA38500689294 /* SimpleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleVC.swift; sourceTree = "<group>"; };
 		A71496C6234CA69100689294 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		A7CF7C2C234DD61300FA0502 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleManager.swift; sourceTree = "<group>"; };
 		B3AEA49B98CE7A4AD5F03EE1 /* Pods-ShadowCoel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel.debug.xcconfig"; sourceTree = "<group>"; };
 		B803A6951D0165EA003EA9AA /* CloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
 		B803A6971D02B768003EA9AA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = API.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -2524,6 +2528,8 @@
 			children = (
 				A71496C4234CA38500689294 /* SimpleVC.swift */,
 				A71496C6234CA69100689294 /* LoginVC.swift */,
+				A7CF7C2C234DD61300FA0502 /* HTTP.swift */,
+				A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */,
 			);
 			name = Simple;
 			sourceTree = "<group>";
@@ -3484,6 +3490,7 @@
 				B83AA5761D38E98A007905B4 /* RequestOverviewVC.swift in Sources */,
 				9B5C00261CBFB35C008DDE7A /* ConfigGroupCell.swift in Sources */,
 				B8C256AE1D1A93DA0074D3B1 /* FlatButton.swift in Sources */,
+				A7CF7C2D234DD61300FA0502 /* HTTP.swift in Sources */,
 				9B8193ED1CBE4DCA00BE320D /* UrlHandler.swift in Sources */,
 				9B1F74761C3164AD0028C1A6 /* VPN.swift in Sources */,
 				B821B0F51D5335DA0061E7B9 /* FeedbackManager.swift in Sources */,
@@ -3531,6 +3538,7 @@
 				B8CCC6E11CFDCADC000E7E2E /* RuleSetListViewController.swift in Sources */,
 				B821B0F01D51DD8F0061E7B9 /* KeychainUtils.swift in Sources */,
 				9B2290FF1C8E5B9600EEC901 /* DataInitializer.swift in Sources */,
+				A7CF7C3E234DF91300FA0502 /* SimpleManager.swift in Sources */,
 				56173BF5228C3AEB0085A625 /* UrlSchemesViewController.swift in Sources */,
 				9BB62FA31C8FFC1D002ADC54 /* RuleSetConfigurationViewController.swift in Sources */,
 				9BF3034B1CCA1B060096588E /* BaseEmptyView.swift in Sources */,
