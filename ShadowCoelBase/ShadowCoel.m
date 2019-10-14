@@ -41,7 +41,8 @@
 }
 
 + (NSURL *)sharedHttpProxyConfUrl {
-    return [[ShadowCoel sharedUrl] URLByAppendingPathComponent:@"http.xxx"];
+    NSURL * u = [[ShadowCoel sharedUrl] URLByAppendingPathComponent:@"http.xxx"];
+    return u;
 }
 
 + (NSURL * _Nonnull)sharedLogUrl {

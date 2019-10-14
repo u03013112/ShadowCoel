@@ -40,4 +40,13 @@ class VPN {
         }
     }
     
+    static func restartVPN() {
+        if (Manager.sharedManager.vpnStatus == .on){
+            let group = CurrentGroupManager.shared.group
+            Manager.sharedManager.stopVPN()
+            Async.main(after: 1) {
+                _switchDefaultVPN(group)
+            }
+        }
+    }
 }

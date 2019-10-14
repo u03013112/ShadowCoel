@@ -232,6 +232,7 @@
 		9BF3034D1CCA20D80096588E /* Logging.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF3034C1CCA20D80096588E /* Logging.swift */; };
 		A71496C5234CA38500689294 /* SimpleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71496C4234CA38500689294 /* SimpleVC.swift */; };
 		A71496C7234CA69100689294 /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71496C6234CA69100689294 /* LoginVC.swift */; };
+		A7BB89EB235359F100053560 /* JRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB89EA235359F100053560 /* JRule.swift */; };
 		A7CF7C2D234DD61300FA0502 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF7C2C234DD61300FA0502 /* HTTP.swift */; };
 		A7CF7C3E234DF91300FA0502 /* SimpleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */; };
 		B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6951D0165EA003EA9AA /* CloudViewController.swift */; };
@@ -1233,6 +1234,7 @@
 		A6C3522CED51B0487ECEE41F /* Pods-TodayWidget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TodayWidget.release.xcconfig"; path = "Pods/Target Support Files/Pods-TodayWidget/Pods-TodayWidget.release.xcconfig"; sourceTree = "<group>"; };
 		A71496C4234CA38500689294 /* SimpleVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleVC.swift; sourceTree = "<group>"; };
 		A71496C6234CA69100689294 /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
+		A7BB89EA235359F100053560 /* JRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRule.swift; sourceTree = "<group>"; };
 		A7CF7C2C234DD61300FA0502 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleManager.swift; sourceTree = "<group>"; };
 		B3AEA49B98CE7A4AD5F03EE1 /* Pods-ShadowCoel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel.debug.xcconfig"; sourceTree = "<group>"; };
@@ -2527,6 +2529,7 @@
 			isa = PBXGroup;
 			children = (
 				A71496C4234CA38500689294 /* SimpleVC.swift */,
+				A7BB89EA235359F100053560 /* JRule.swift */,
 				A71496C6234CA69100689294 /* LoginVC.swift */,
 				A7CF7C2C234DD61300FA0502 /* HTTP.swift */,
 				A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */,
@@ -3521,6 +3524,7 @@
 				B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */,
 				B8A09D7F1D51B9A900A9A989 /* PushLocalChangesBaseOperation.swift in Sources */,
 				9BC858A51C33D30100992032 /* BaseSafariViewController.swift in Sources */,
+				A7BB89EB235359F100053560 /* JRule.swift in Sources */,
 				B84551421CF878BD005779CD /* ConfigGroupChooseVC.swift in Sources */,
 				B88096B01D0579F5008BEB87 /* CloudDetailViewController.swift in Sources */,
 				B8319A0A1D1B975C001E50C2 /* RegexUtils.swift in Sources */,

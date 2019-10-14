@@ -141,6 +141,11 @@ class HomeVC: FormViewController, UINavigationControllerDelegate, HomePresenterP
                 try defaultRealm.write {
                     self.presenter.group.defaultToProxy = row.value ?? true
                 }
+                
+                if (Manager.sharedManager.vpnStatus == VPNStatus.on){
+                    VPN.restartVPN()
+                }
+                
             }catch {
                 self.showTextHUD("\("Fail to modify default to proxy".localized()): \((error as NSError).localizedDescription)", dismissAfterDelay: 1.5)
             }

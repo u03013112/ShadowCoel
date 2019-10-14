@@ -194,7 +194,7 @@ open class Manager {
         do {
             try regenerateConfigFiles()
         } catch {
-
+            print(error)
         }
         ShadowCoel.sharedUserDefaults().set(id, forKey: kDefaultGroupIdentifier)
         ShadowCoel.sharedUserDefaults().set(name, forKey: kDefaultGroupName)

@@ -58,4 +58,34 @@ class HTTP: NSObject{
         })
         task.resume()
     }
+    func getRequest(urlStr: String, completion: @escaping (String?, Error?) -> Void) {
+        let url = URL(string: urlStr)!
+        let session = URLSession.shared
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        
+        let task = session.dataTask(with: request, completionHandler: { data, response, error in
+            guard error == nil else {
+                DispatchQueue.main.async(execute: {
+                    completion(nil, error)
+                })
+                return
+            }
+            guard let data = data else {
+                DispatchQueue.main.async(execute: {
+                    completion(nil, NSError(domain: "dataNilError", code: -100001, userInfo: nil))
+                })
+                return
+            }
+            
+            let str = String.init(data: data, encoding: .utf8)
+            print(str ?? "str failed")
+            DispatchQueue.main.async(execute: {
+                completion(str, nil)
+            })
+                
+            
+        })
+        task.resume()
+    }
 }
