@@ -292,9 +292,6 @@ extension Manager {
             let arr = ["host": upstreamProxy.host, "port": upstreamProxy.port, "password": upstreamProxy.password ?? "", "authscheme": upstreamProxy.authscheme ?? "", "ota": upstreamProxy.ota, "protocol": upstreamProxy.ssrProtocol ?? "", "protocol_param": upstreamProxy.ssrProtocolParam ?? "", "obfs": upstreamProxy.ssrObfs ?? "", "obfs_param": upstreamProxy.ssrObfsParam ?? ""] as [String : Any]
             
             do {
-                //let data = try JSONSerialization.data(withJSONObject: arr, options: .prettyPrinted)
-                //content = NSString(data: data, encoding: NSUTF8StringEncoding.rawValue) ?? ""
-                
                 let data = try JSONSerialization.data(withJSONObject: arr, options: JSONSerialization.WritingOptions.prettyPrinted)
                 content = String(data: data, encoding: String.Encoding.utf8) ?? ""
             }

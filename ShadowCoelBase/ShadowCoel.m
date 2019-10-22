@@ -48,5 +48,9 @@
 + (NSURL * _Nonnull)sharedLogUrl {
     return [[ShadowCoel sharedUrl] URLByAppendingPathComponent:@"tunnel.log"];
 }
+    
++ (NSURL * _Nonnull)sharedTokenUrl {
+    return [[ShadowCoel sharedUrl] URLByAppendingPathComponent:@"token"];
+}
 
 @end

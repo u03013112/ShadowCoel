@@ -56,7 +56,7 @@ class JRule: NSObject{
                             let startIndex = str.index(str.startIndex, offsetBy: 7)
                             str = String(str[startIndex..<str.endIndex])
                         }
-                        print(str,count)
+//                        print(str,count)
                         count += 1
                         let rule = Rule(type: .DomainSuffix, action: .Proxy, value: str)
                         rules.append(rule)

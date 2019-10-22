@@ -18,4 +18,5 @@
 + (NSURL * _Nonnull)sharedProxyConfUrl;
 + (NSURL * _Nonnull)sharedHttpProxyConfUrl;
 + (NSURL * _Nonnull)sharedLogUrl;
++ (NSURL * _Nonnull)sharedTokenUrl;
 @end

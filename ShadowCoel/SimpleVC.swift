@@ -11,8 +11,11 @@ import Eureka
 import Alamofire
 import Cartography
 
+import SwiftyStoreKit
+
 private let kFormPACMode = "FormPACMode"
 private let kFromConnect = "FromConnect"
+private let kFromVIPExpire = "FromVIPExpire"
 
 class SimpleVC: FormViewController{
     override func viewDidLoad() {
@@ -27,19 +30,12 @@ class SimpleVC: FormViewController{
         NotificationCenter.default.addObserver(self, selector: #selector(onLoginSuccess), name: NSNotification.Name(rawValue: kLoginSuccess), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onVPNStatusChanged), name: NSNotification.Name(rawValue: kProxyServiceVPNStatusNotification), object: nil)
         
-        if (SimpleManager.sharedManager.token != ""){
-//            try 2 get config
-            
-//            if success,login ok
-            
-//            if failed,logout
-        }
-        
         if (SimpleManager.sharedManager.isPACMod){
             JRule.setGFW()
         }else{
             JRule.setAll()
         }
+        login()
     }
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -67,33 +63,82 @@ class SimpleVC: FormViewController{
     }
     
     func generateLoginSection() -> Section {
-        let section = Section("登录")
+        let section = Section()
         section
-            <<< ActionRow() {
-                $0.title = "登录".localized()
-                }.cellUpdate {cell ,_ in
-                    cell.imageView?.image = UIImage(named: "HideIcon")?.withRenderingMode(.alwaysTemplate)
-                    cell.imageView?.tintColor = Color.ButtonIcon
-                }.onCellSelection({ [unowned self](cell, row) -> () in
-                    cell.setSelected(false, animated: true)
-                    self.showLogin()
-                })
+            <<< ActionRow(kFromVIPExpire) {
+                $0.title = "VIP 有效期："
+                $0.value = "-"
+                if SimpleManager.sharedManager.expireDate > 0 {
+                    $0.value = SimpleManager.sharedManager.timeIntervalChangeToTimeStr(timeInterval: SimpleManager.sharedManager.expireDate)
+                }
+            }.onCellSelection({(cell, row) -> () in
+                cell.setSelected(false, animated: true)
+                let vc = PurchaseVC()
+                self.navigationController?.pushViewController(vc,animated: true)
+            })
             <<< SwitchRow(kFormPACMode) {
-                $0.title = "PAC mode".localized()
+                $0.title = "智能路由".localized()
                 $0.value = SimpleManager.sharedManager.isPACMod
-                }.onChange({ (row) in
-                    if (Manager.sharedManager.vpnStatus == VPNStatus.on){
-                        VPN.restartVPN()
+            }.onChange({ (row) in
+                if (Manager.sharedManager.vpnStatus == VPNStatus.on){
+                    VPN.restartVPN()
+                }
+                if row.value == false {
+                    SimpleManager.sharedManager.isPACMod = false
+                    JRule.setAll()
+                }else{
+                    SimpleManager.sharedManager.isPACMod = true
+                    JRule.setGFW()
+                }
+                
+            })
+            <<< ActionRow() {
+                $0.title = "充值".localized()
+            }.onCellSelection({(cell, row) -> () in
+                cell.setSelected(false, animated: true)
+                SwiftyStoreKit.purchaseProduct("u0.vpn.vip.month", quantity: 1, atomically: false) { result in
+                    switch result {
+                    case .success(let purchase):
+                        PurchaseJ.didPurchaseSuccess(purchase: purchase)
+                    case .error(let error):
+                        switch error.code {
+                        case .unknown: print("Unknown error. Please contact support")
+                        case .clientInvalid: print("Not allowed to make the payment")
+                        case .paymentCancelled: break
+                        case .paymentInvalid: print("The purchase identifier was invalid")
+                        case .paymentNotAllowed: print("The device is not allowed to make the payment")
+                        case .storeProductNotAvailable: print("The product is not available in the current storefront")
+                        case .cloudServicePermissionDenied: print("Access to cloud service information is not allowed")
+                        case .cloudServiceNetworkConnectionFailed: print("Could not connect to the network")
+                        case .cloudServiceRevoked: print("User has revoked permission to use this cloud service")
+                        default: print((error as NSError).localizedDescription)
+                        }
                     }
-                    if row.value == false {
-                        SimpleManager.sharedManager.isPACMod = false
-                        JRule.setAll()
-                    }else{
-                        SimpleManager.sharedManager.isPACMod = true
-                        JRule.setGFW()
+                }
+            })
+            <<< ActionRow() {
+                $0.title = "重购".localized()
+            }.onCellSelection({(cell, row) -> () in
+                cell.setSelected(false, animated: true)
+                SwiftyStoreKit.restorePurchases(atomically: false) { results in
+                    if results.restoreFailedPurchases.count > 0 {
+                        print("Restore Failed: \(results.restoreFailedPurchases)")
                     }
-                    
-                })
+                    else if results.restoredPurchases.count > 0 {
+                        for purchase in results.restoredPurchases {
+                            
+                            // fetch content from your server, then:
+                            if purchase.needsFinishTransaction {
+                                SwiftyStoreKit.finishTransaction(purchase.transaction)
+                            }
+                        }
+                        print("Restore Success: \(results.restoredPurchases)")
+                    }
+                    else {
+                        print("Nothing to Restore")
+                    }
+                }
+            })
         return section
     }
     func updateConnectButton() {
@@ -121,57 +166,56 @@ class SimpleVC: FormViewController{
     }
     @objc func connect() {
         if (Manager.sharedManager.vpnStatus == VPNStatus.off) {
-            var IP = ""
-            var port = 0
-            var method = ""
-            var passwd = ""
             //        登陆成功才能连接
             if (SimpleManager.sharedManager.token == ""){
                 showTextHUD("需要登录", dismissAfterDelay: 1.0)
             }else{
                 print("获取配置")
-                var dict = [String:Any]()
-                dict["token"] = SimpleManager.sharedManager.token
                 let completion = {
-                    (result:[String: Any]?, error:Error?) -> Void in
+                    (result:[String: Any]?, error:Error?, errStr:String?) -> Void in
+                    if let error = error {
+                        self.showTextHUD("\(error)", dismissAfterDelay: 1.0)
+                        return
+                    }
+                    if let errStr = errStr {
+                        self.showTextHUD(errStr, dismissAfterDelay: 1.0)
+                        return
+                    }
                     if let result = result {
-                        if (result["error"] as? String != nil){
-                            //
-                            self.showTextHUD("获取配置失败", dismissAfterDelay: 1.0)
-                            return
-                        }
-                        IP = result["IP"] as! String
-                        port = Int(result["port"] as! String) ?? 58700
-                        method = result["method"] as! String
-                        passwd = result["passwd"] as! String
+                        let manager = SimpleManager.sharedManager
+                        manager.IP = result["IP"] as! String
+                        manager.port = result["port"] as! Int
+                        manager.method = result["method"] as! String
+                        manager.passwd = result["passwd"] as! String
                         
+                        let proxy:Proxy?
                         let proxies = DBUtils.allNotDeleted(Proxy.self, sorted: "createAt").map({ $0 })
                         if (proxies.count == 0) {
                             print("需要新建")
-                            self.save(proxy: nil, IP: IP, port: port, method: method, passwd: passwd)
+                            proxy = Proxy()
+                            self.save(proxy: proxy, IP: manager.IP, port: manager.port, method: manager.method, passwd: manager.passwd)
                         }else{
                             print("需要修改")
-                            let proxy = proxies[0]
-                            self.save(proxy: proxy, IP: IP, port: port, method: method, passwd: passwd)
+                            proxy = proxies[0]
+                            self.save(proxy: proxy, IP: manager.IP, port: manager.port, method: manager.method, passwd: manager.passwd)
                         }
-                        
                         let group = CurrentGroupManager.shared.group
-                        
+                        do{
+                            try ConfigurationGroup.changeProxy(forGroupId: group.uuid, proxyId: proxy?.uuid)
+                        }catch{
+                            
+                        }
                         VPN.switchVPN(group) { [unowned self] (error) in
                             if let error = error {
                                 Alert.show(self, message: "\("Fail to switch VPN.".localized()) (\(error))")
                             }
                         }
-                    } else if let error = error {
-                        print("error: \(error.localizedDescription)")
                     }
                 }
-                HTTP.shared.postRequest(urlStr: "http://frp.u03013112.win:18021/v1/config/get-config", data: dict, completion: completion)
+                getVPNConfig(completion: completion)
             }
-        }
-        if (Manager.sharedManager.vpnStatus == VPNStatus.on) {
+        }else if (Manager.sharedManager.vpnStatus == VPNStatus.on) {
             let group = CurrentGroupManager.shared.group
-            
             VPN.switchVPN(group) { [unowned self] (error) in
                 if let error = error {
                     Alert.show(self, message: "\("Fail to switch VPN.".localized()) (\(error))")
@@ -214,5 +258,83 @@ class SimpleVC: FormViewController{
     
     @objc func onVPNStatusChanged() {
         updateConnectButton()
+    }
+    
+    
+    func getVPNConfig (completion: @escaping ([String: Any]?, Error?, String?) -> Void) {
+        let token = SimpleManager.sharedManager.token
+        if token == "" {
+            return
+        }
+        let dict = ["token":token]
+        
+        let completion1 = {
+            (result:[String: Any]?, error:Error?) -> Void in
+            if let error = error {
+                completion(nil,error,nil)
+                return
+            }
+            if let result = result {
+                if (result["error"] as? String != nil){
+                    completion(nil,nil,result["error"] as? String)
+                    return
+                }
+                let ret = [
+                    "IP":result["IP"] as! String,
+                    "port":Int(result["port"] as! String) ?? 58700,
+                    "method":result["method"] as! String,
+                    "passwd":result["passwd"] as! String
+                ] as [String : Any]
+                completion(ret,nil,nil)
+                return
+            }
+        }
+        HTTP.shared.postRequest(urlStr: "http://frp.u03013112.win:18021/v1/ios/config", data: dict, completion: completion1)
+    }
+    func login() {
+        login(success:{ (token,ex) in
+            SimpleManager.sharedManager.token = token
+            let exRow = self.form.rowBy(tag:kFromVIPExpire) as! ActionRow
+            
+            exRow.value = SimpleManager.sharedManager.timeIntervalChangeToTimeStr(timeInterval: Double(ex))
+            exRow.reload()
+        },failed: { (errStr) in
+            let alert = UIAlertController(title: "err".localized(), message: errStr, preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "comfirm".localized(), style: .cancel, handler:{ (a) in
+//                重新登录，必须成功
+                self.login()
+            }))
+            self.present(alert, animated: true, completion: nil)
+        })
+    }
+    
+    func login (success:@escaping (String,Double)->Void,failed:@escaping (String)->Void) {
+        let dict = ["uuid":getUUID()]
+        
+        let completion = {
+            (result:[String: Any]?, error:Error?) -> Void in
+            if let error = error {
+                print(error)
+                failed(error.localizedDescription)
+                return
+            }
+            if let result = result {
+                if (result["error"] as? String != nil){
+                    failed(result["error"] as! String)
+                    return
+                }
+                if result["expiresDate"] as? String != nil{
+                    let exStr = result["expiresDate"] as! String
+                    let ex = Double(exStr)
+                    success(result["token"] as! String,ex ?? 0)
+                    SimpleManager.sharedManager.expireDate = ex ?? 0
+                }else{
+                    success(result["token"] as! String,0)
+//                    这里抓进去充值吧
+                }
+                return
+            }
+        }
+        HTTP.shared.postRequest(urlStr: "http://frp.u03013112.win:18021/v1/ios/login", data: dict, completion: completion)
     }
 }

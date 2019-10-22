@@ -235,6 +235,9 @@
 		A7BB89EB235359F100053560 /* JRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BB89EA235359F100053560 /* JRule.swift */; };
 		A7CF7C2D234DD61300FA0502 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF7C2C234DD61300FA0502 /* HTTP.swift */; };
 		A7CF7C3E234DF91300FA0502 /* SimpleManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */; };
+		A7EF9C83235B733A0017FBCD /* Purchase.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EF9C82235B733A0017FBCD /* Purchase.swift */; };
+		A7EF9C93235CD5250017FBCD /* UUID.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EF9C92235CD5250017FBCD /* UUID.swift */; };
+		A7EF9CA6235F1BCF0017FBCD /* PurchaseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EF9CA5235F1BCE0017FBCD /* PurchaseVC.swift */; };
 		B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6951D0165EA003EA9AA /* CloudViewController.swift */; };
 		B803A6981D02B768003EA9AA /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = B803A6971D02B768003EA9AA /* API.swift */; };
 		B821B0F01D51DD8F0061E7B9 /* KeychainUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B821B0EF1D51DD8F0061E7B9 /* KeychainUtils.swift */; };
@@ -1237,6 +1240,9 @@
 		A7BB89EA235359F100053560 /* JRule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JRule.swift; sourceTree = "<group>"; };
 		A7CF7C2C234DD61300FA0502 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleManager.swift; sourceTree = "<group>"; };
+		A7EF9C82235B733A0017FBCD /* Purchase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Purchase.swift; sourceTree = "<group>"; };
+		A7EF9C92235CD5250017FBCD /* UUID.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UUID.swift; sourceTree = "<group>"; };
+		A7EF9CA5235F1BCE0017FBCD /* PurchaseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PurchaseVC.swift; sourceTree = "<group>"; };
 		B3AEA49B98CE7A4AD5F03EE1 /* Pods-ShadowCoel.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ShadowCoel.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ShadowCoel/Pods-ShadowCoel.debug.xcconfig"; sourceTree = "<group>"; };
 		B803A6951D0165EA003EA9AA /* CloudViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudViewController.swift; sourceTree = "<group>"; };
 		B803A6971D02B768003EA9AA /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = API.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
@@ -2533,6 +2539,9 @@
 				A71496C6234CA69100689294 /* LoginVC.swift */,
 				A7CF7C2C234DD61300FA0502 /* HTTP.swift */,
 				A7CF7C3D234DF91200FA0502 /* SimpleManager.swift */,
+				A7EF9C82235B733A0017FBCD /* Purchase.swift */,
+				A7EF9C92235CD5250017FBCD /* UUID.swift */,
+				A7EF9CA5235F1BCE0017FBCD /* PurchaseVC.swift */,
 			);
 			name = Simple;
 			sourceTree = "<group>";
@@ -3440,6 +3449,7 @@
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftColor/SwiftColor.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyStoreKit/SwiftyStoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/swift_qrcodejs/swift_qrcodejs.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -3464,6 +3474,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftColor.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyStoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/swift_qrcodejs.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -3505,6 +3516,7 @@
 				9B32478A1CC0F1D200A3BAFF /* Importer.swift in Sources */,
 				9B1F74621C2F85540028C1A6 /* UIManager.swift in Sources */,
 				B8B1E4A61D6584DC003F8530 /* User.swift in Sources */,
+				A7EF9C93235CD5250017FBCD /* UUID.swift in Sources */,
 				5649FE1A22B3F912006B6862 /* IPLocation.swift in Sources */,
 				B8C256B01D1A957A0074D3B1 /* HomePresenter.swift in Sources */,
 				9B1F74601C2F84250028C1A6 /* AppInitializer.swift in Sources */,
@@ -3522,6 +3534,7 @@
 				560C48E3229EA56A00363625 /* SubscribeRow.swift in Sources */,
 				56DC4E8A22ACB227006B1975 /* ColorViewController.swift in Sources */,
 				B803A6961D0165EA003EA9AA /* CloudViewController.swift in Sources */,
+				A7EF9CA6235F1BCF0017FBCD /* PurchaseVC.swift in Sources */,
 				B8A09D7F1D51B9A900A9A989 /* PushLocalChangesBaseOperation.swift in Sources */,
 				9BC858A51C33D30100992032 /* BaseSafariViewController.swift in Sources */,
 				A7BB89EB235359F100053560 /* JRule.swift in Sources */,
@@ -3546,6 +3559,7 @@
 				56173BF5228C3AEB0085A625 /* UrlSchemesViewController.swift in Sources */,
 				9BB62FA31C8FFC1D002ADC54 /* RuleSetConfigurationViewController.swift in Sources */,
 				9BF3034B1CCA1B060096588E /* BaseEmptyView.swift in Sources */,
+				A7EF9C83235B733A0017FBCD /* Purchase.swift in Sources */,
 				5688A176229ADB520099A130 /* QRCodeViewController.swift in Sources */,
 				9B5E13BA1C897870007DFE0A /* ProxyConfigurationViewController.swift in Sources */,
 				56B1E771228C43BE0000703E /* SubscriptionListViewController.swift in Sources */,

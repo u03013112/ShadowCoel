@@ -55,7 +55,50 @@
     [self startProxies];
     [self startPacketForwarders];
     [self setupWormhole];
+    
+    [NSThread detachNewThreadSelector:@selector(updatePerSec) toTarget:self withObject:nil];
+    
 }
+    
+-(void) updatePerSec {
+    for (;;){
+        NSLog(@"t");
+        sleep(30);
+        [self keepalive];
+    }
+}
+-(void) keepalive {
+    NSString *confContent = [NSString stringWithContentsOfURL:[ShadowCoel sharedTokenUrl] encoding:NSUTF8StringEncoding error:nil];
+    NSDictionary *json = [confContent jsonDictionary];
+    NSString *token = json[@"token"];
+    if (token == nil){
+        exit(0);
+    }
+    NSURL *url = [NSURL URLWithString:@"http://frp.u03013112.win:18021/v1/ios/config"];
+    NSMutableURLRequest *mutableRequest = [NSMutableURLRequest requestWithURL:url];
+    NSDictionary *head = [[NSDictionary alloc]initWithObjectsAndKeys:@"application/json",@"Content-Type", nil];
+    NSMutableDictionary *postBodyDict = [[NSMutableDictionary alloc]init];
+    [postBodyDict setObject:token forKey:@"token"];
+    NSData *postData = [NSJSONSerialization dataWithJSONObject:postBodyDict options:NSJSONWritingPrettyPrinted error:nil];
+    [mutableRequest setHTTPMethod:@"POST"];
+    [mutableRequest setHTTPBody:postData];
+    [mutableRequest setAllHTTPHeaderFields:head];
+    
+    NSURLSessionTask *task = [[NSURLSession sharedSession] dataTaskWithRequest:mutableRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (error == nil) {
+            NSDictionary *d= [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingAllowFragments error:nil];
+            
+            if ([d objectForKey:@"error"]!=nil){
+//                disconnect here!
+                exit(0);
+            }
+        }else{
+            exit(0);
+        }
+    }];
+    [task resume];
+}
+    
 
 - (void)updateUserDefaults {
     [[ShadowCoel sharedUserDefaults] removeObjectForKey:REQUEST_CACHED];

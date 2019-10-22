@@ -9,8 +9,9 @@ import Foundation
 import ICSMainFramework
 import Appirater
 // import LogglyLogger_CocoaLumberjack
+import SwiftyStoreKit
 
-let appID = "1463718156"
+let appKey = "02188998de7d4b21830f46fa3440b143"
 
 class AppInitializer: NSObject, AppLifeCycleProtocol {
     
@@ -19,11 +20,26 @@ class AppInitializer: NSObject, AppLifeCycleProtocol {
         
         configLogging()
         configAppirater()
+        
+        SwiftyStoreKit.completeTransactions(atomically: true) { purchases in
+            for purchase in purchases {
+                switch purchase.transaction.transactionState {
+                case .purchased, .restored:
+                    if purchase.needsFinishTransaction {
+//                        PurchaseJ.didPurchaseSuccess(purchase: purchase)
+                    }
+                // Unlock content
+                case .failed, .purchasing, .deferred:
+                    break // do nothing
+                }
+            }
+        }
+        
         return true
     }
 
     func configAppirater() {
-        Appirater.setAppId(appID)
+        
     }
 
     func configLogging() {

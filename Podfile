@@ -32,6 +32,10 @@ target "ShadowCoel" do
     pod "MMDB-Swift"
     library
     model
+    use_frameworks!
+    pod 'SwiftyStoreKit'
+    use_frameworks!
+    pod 'KeychainAccess'
 end
 
 target "PacketTunnel" do
